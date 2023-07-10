@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel= "stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymus">
+    </head>
+    <div class="navbar" >
+        <a href="/">
+            <div class="main-headshot"></div>
+        </a>
+        <a class="name" href="/">MELISA OZDOYURAN</a>
+        <i id="bars" class="fas fa-bars" onclick="openMenu()"></i>
+        
+    </div>
+    <div id="dark-overlay" onclick="closeMenu()"></div>
+    <div id = "sliding-menu" class="sliding-menu">
+        <a href="javascript:void(o)" class="x-sign" onclick="closeMenu()">&times;</a>
+        <a href="/about">about</a>
+        <a href="/work">work</a>
+        <a href="/contact">contact</a>
+    </div>
+     <div class="circle"></div>
+     <div class="circle-2"></div>
+     <div class="circle-3"></div>
+     <div class="circle-4"></div>
+</html>
+<script>
+    function openMenu(){
+        var menuSlider = document.getElementById("sliding-menu");
+        menuSlider.style.width= "300px";
+        document.getElementById("dark-overlay").style.width = "100%"; 
+    }
+    function closeMenu(){
+        var menuSlider = document.getElementById("sliding-menu");
+        menuSlider.style.width= "0";
+        document.getElementById("dark-overlay").style.width = "0"; 
+    }
+</script>

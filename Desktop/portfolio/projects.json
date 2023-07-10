@@ -1,0 +1,57 @@
+{ "1":
+{
+    "id" : "1",
+    "title": "PokerPro",
+    "category": "Apps",
+    "description": "an innovative tool for beginner poker players, offering advanced betting strategies by calculating potential hands, predicting opponents' stronger hands, and highlighting key cards.",
+    "sitename": "project website",
+    "deliverables": ["project website"],
+    "tools": ["JavaScript", "HTML & CSS"],
+    "coverphoto": "/photos/cover1.jpeg",
+    "bannerphoto": "/photos/cover1.jpeg",
+    "partial": "poker"
+},
+
+"2":
+{
+    "id" : "2",
+    "title": "The NFC Lock",
+    "category": "Designs",
+    "description": "The project develops NFC Lock, a sustainable, real-time luggage tracking solution via an app.",
+    "sitename": "project website",
+    "deliverables": ["project website"],
+    "tools": ["JavaScript", "HTML & CSS"],
+    "coverphoto": "/photos/cover2.jpeg",
+    "bannerphoto": "/photos/cover2.jpeg",
+    "partial": "lock"
+},
+
+"3":
+{
+    "id" : "3",
+    "title": "Pegboard",
+    "category": "Designs",
+    "description": "Designed an adjustable difficulty level activity in collaboration with Shirley Ryan Ability Lab, Chicago, with a team of 4 to support traumatic brain injury patients in reinforcing motor control, problem solving, and memory rehabilitation. ",
+    "sitename": "project website",
+    "deliverables": ["project website"],
+    "tools": ["JavaScript", "HTML & CSS"],
+    "coverphoto": "/photos/cover3.jpeg",
+    "bannerphoto": "/photos/cover3.jpeg",
+    "partial": "pegbaord"
+},
+"4":
+{
+    "id" : "4",
+    "title": "Trip Planner",
+    "category": "Designs",
+    "description": "Developed Road Map API for optimal route finding with Dijkstra's Algorithm and Heapsort, implementing binary heaps, graphs, and dictionaries to manage and navigate intricate road networks.",
+    "sitename": "project website",
+    "deliverables": ["project website"],
+    "tools": ["JavaScript", "HTML & CSS"],
+    "coverphoto": "/photos/cover5.jpeg",
+    "bannerphoto": "/photos/cover5.jpeg",
+    "partial": "planner"
+}
+
+
+}

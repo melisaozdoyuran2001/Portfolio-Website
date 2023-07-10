@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        {{> main}}
+        <div class="my-work">
+            <div class="recent-title">my projects</div>
+        </div>
+        {{#each projects}}
+        <a class="work-obj" id="{{id}}" href="/project/{{id}}">
+            <img src="{{coverphoto}}" class="work-img" />
+            <div class="work-overlay"></div>
+            <div class="work-title">{{title}}</div>
+        </a>
+
+        {{/each}}
+        {{> footer}}
+    </body>
+</html>
