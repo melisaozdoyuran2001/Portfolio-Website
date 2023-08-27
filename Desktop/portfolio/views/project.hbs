@@ -1,12 +1,52 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="/styles.css">
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        {{> main}}
-        <div id="coming-soon">This page is under construction :)</div>
-    </body>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <!-- Main Content -->
+    {{> main }}
+
+    <!-- Project Title and Category -->
+   <section class="project-title-section">
+    <div class="project-title">
+        <h1 class="project-name">{{project.title}}</h1>
+        <p class="project-category">{{project.category}}</p>
+        <img src="/photos/down.jpeg" alt="Down Arrow" class="arrow-image">
+    </div>
+</section>
+
+<section class="project-image-section">
+<div class="project-images">
+            <img src="{{project.img1}}" >
+            <img src="{{project.img2}}">
+            <img src="{{project.img3}}" >
+</section>
+
+
+
+    <!-- Project Description and Details -->
+    <section class="project-block">
+        <div class="project-des">{{project.description}}</div>
+        
+
+        <!-- Tools -->
+        <div class="project-tools-section">
+            <h2 class="project-tools-title">Tools</h2>
+            <ul>
+                {{#each project.tools}}
+                <li class="project-tools">{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {{> footer }}
+</body>
+
 </html>

@@ -279,7 +279,7 @@ body {
     position: absolute;
     top: -8vw;
     left: -7vw;
-    z-index:1;
+    z-index:-1;
     animation: pulse 2s infinite 0.5s;
     overflow: hidden
 }
@@ -291,7 +291,7 @@ body {
     position: absolute;
     top: -15vw;
     right: 5vw;
-    z-index:1;
+    z-index:-1;
     animation: pulse 3s infinite 0.7s;
     overflow: hidden
 }
@@ -303,7 +303,7 @@ body {
     position: absolute;
     right: -20vw;
     top: 35vw;
-    z-index:1;
+    z-index:-1;
     animation: pulse 2s infinite 0.3s;
     overflow: hidden
 }
@@ -315,7 +315,7 @@ body {
     position: absolute;
     left: -13vw;
     top: 45vw;
-    z-index: 1;
+    z-index: -1;
     animation: pulse 3s infinite;
     overflow: hidden
 }
@@ -609,7 +609,7 @@ input:focus, textarea:focus {
     bottom: -25px;
     left:4;
     z-index: 4;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 80, 80);
     font-size: 21px;
     letter-spacing: 1px;
     font-family: BGBold;
@@ -779,6 +779,151 @@ input:focus, textarea:focus {
     color: #e2e2e2; 
     background-color: #fff;
 }
+
+.project-title-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.project-block {
+    justify-content: center;
+    align-items: center;
+    padding-left : 10%;
+
+}
+
+.project-title {
+    width: 50%;
+    position: relative;
+    margin-top:  12%;
+    text-align: center; 
+    font-family: BGBold; 
+}
+
+.project-name , .project-category {
+    letter-spacing: 2px;  
+    color:rgba(172, 35, 79, 0.885); 
+}
+
+.project-name {
+    font-size: 50px;
+   
+}
+
+.project-category {
+    font-size:  30px ;
+    top: 186px; 
+    
+}
+
+.project-block { 
+    margin-left: 10%;
+    width: 65%;
+    font-family:  BGLight;
+    color: #656565;
+}
+
+.project-des {
+    margin-top: 34px;
+    font-size:  17px;
+    line-height:  28.8px;
+    text-align: center;
+}
+
+.project-web {
+    margin-top : 90px
+}
+
+#project-arrow {
+    float : left; 
+    font-size: 24px;
+    padding-top: 1px;
+
+}
+
+.project-web-name {
+    padding-left: 20px;
+    font-family : BGBold ;
+    font-size:  17px;
+    color: #000; 
+}
+
+.project-tools-title { 
+    font-family: BGBold;
+    font-size:  17px;
+    color: #000;
+    text-transform:  uppercase;
+    padding-top: 5%;
+}
+
+
+.project-tools {
+    display: block;
+    margin-top: 5.4px;
+    font-size: 17px;
+}
+    
+.project-tools-title {
+    margin-top: 35px; 
+}
+
+.project-page {
+    margin-left:  10%;
+    font-size:  15px;
+    font-family: BGLight;
+    text-transform:  uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 80px;
+    margin-top: 115px;
+}
+
+.project-page-center {
+    width : 80%;
+    margin: auto; 
+    text-align: center; 
+}
+
+.arrow-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 24px;  
+}
+.project-images {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    flex-wrap: wrap;       
+    height: 20%;           
+}
+
+.project-images img {
+    width: 20%;  
+    margin: 2%; 
+}
+
+
+.project-images img:last-child {
+    margin-right: 0; 
+}
+
+
+.project-images-section {
+    height: 100%; 
+    position: relative;
+    margin-top : 20%;
+
+}
+
+
+
+
+
+
+
+
 
 
 

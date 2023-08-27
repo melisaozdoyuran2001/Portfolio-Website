@@ -1,98 +1,94 @@
-require('dotenv').config(); 
-const nodemailer = require("nodemailer"); 
-var express = require("express"); 
-var app = express(); 
-var projects = require("./projects.json"); 
-var path = require("path"); 
-const { engine } = require("express-handlebars");
-var bodyParser = require("body-parser");
+require('dotenv').config();
+const express = require("express");
+const path = require("path");
+const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
+const projects = require("./projects.json");
+const nodemailer = require('nodemailer');
+const sgTransport = require('nodemailer-sendgrid-transport');
 
+const app = express();
 
-
-
-app.use(bodyParser.urlencoded({extended: true}));
+// Body parser setup
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Static files setup
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static('public'));
 
-app.set("views", path.join(__dirname, "views"));
-app.engine(
-  ".hbs",
-  engine({
+// Handlebars setup with custom helper
+const hbs = exphbs.create({
     extname: ".hbs",
     defaultLayout: false,
-  })
-);
-// This connects everything.
+    helpers: {
+        eq: (a, b) => a === b
+    }
+});
+
+app.engine('.hbs', hbs.engine);
 app.set("view engine", ".hbs");
+app.set("views", path.join(__dirname, "views"));
 
+// Nodemailer with SendGrid setup
+const options = {
+    auth: {
+        api_key: process.env.SENDGRID_API_KEY
+    }
+}
+const transporter = nodemailer.createTransport(sgTransport(options));
 
-
-app.get("/" , function(req,res){
+// Routes
+app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.get("/contact" , function(req,res){
-  res.render("contact", {submitted: "no"});
+app.get("/contact", (req, res) => {
+    res.render("contact", { submitted: "no" });
 });
 
-app.get("/work" , function(req,res){
-  res.render("work", {projects: projects});
+app.get("/work", (req, res) => {
+    res.render("work", { projects: projects });
 });
 
-app.get("/about" , function(req,res){
-  res.render("about");
+app.get("/about", (req, res) => {
+    res.render("about");
 });
 
-
-app.get("/project/:pid([0-9]+)" , function(req,res,next){
-  // console.log("project id");
-  // console.log(req.params.pid);
-  var pid = req.params.pid;
-  var thisProj= projects[pid.toString()];
-  // console.log(thisProj);
-  res.render("project", {project: thisProj});
+app.get("/project/:pid([0-9]+)", (req, res) => {
+    var pid = req.params.pid;
+    var thisProj = projects[pid.toString()];
+    res.render("project", { project: thisProj });
 });
 
-//step 1  -trasnsporter
+app.post("/contact", (req, res) => {
+    const { fullname, email, subject, note } = req.body;
 
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL ,
-    pass: process.env.PASS 
-  }
-}); 
+    let mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: "melisaozdoyuran@hotmail.com",
+        subject: `Contact Form - ${subject}`,
+        text: `
+From: ${fullname} (${email})
+Subject: ${subject}
 
-app.post("/contact", function(req, res, next) {
-  console.log("contact form posted");
-  console.log(req.body);
-  var name = req.body.fullname;
-  var email = req.body.email;
-  var note = req.body.note;
-  var subject = req.body.subject;
+${note}
+        `
+    };
 
-  //step 2 
-  let mailOptions = {
-    from: process.env.EMAIL,
-    to: process.env.EMAIL, 
-    subject: req.body.subject,
-    text: req.body.note,
-    html: "<b>Full Name </b>" + name + "<br><b>Email </b>" + email + "<br><b>Message </b>" + note
-  };
-  //step 3 
-  transporter.sendMail(mailOptions, function(err, data){ 
-    if(err) {
-      console.log("Error sending email");
-    }
-    else { 
-      console.log("Email sent!");
-      res.render("contact", {submitted: "yes"}); 
-    }
-  }); 
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.error("Error sending email:", err);
+            res.render("contact", { submitted: "error" });
+        } else {
+            console.log("Email sent:", info.response);
+            console.log("Email send response:", info);
+
+            res.render("contact", { submitted: "yes" });
+        }
+    });
 });
 
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 app.listen(port); 
 console.log("Express started. Listening on port %s", port);
