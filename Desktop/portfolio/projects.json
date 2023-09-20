@@ -4,14 +4,15 @@
     "title": "Flow Free",
     "category": "Game Application",
     "description": "FlowFree is a logic puzzle game that boasts a unique dynamic level generation algorithm, ensuring every puzzle is a fresh challenge. Its user-friendly interface, combined with vivid graphics and varied difficulty levels, makes it an engaging experience for both beginners and seasoned puzzle enthusiasts. Key features include a never-repeating, always-solvable puzzle design, player-centric UI, and immersive gameplay.",
-    "sitename": "project website",
+    "sitename": "-->Github Repo",
     "deliverables": ["project website"],
     "tools": ["C#", "Unity", "Python", "Adobe XD"],
     "coverphoto": "/photos/flow.jpeg",
     "img1": "/photos/flow1.jpg",
     "img2": "/photos/flow2.jpg",
     "img3": "/photos/flow3.jpg",
-    "partial": "poker"
+    "partial": "poker",
+    "url": "https://github.com/melisaozdoyuran2001/Cerebral-Puzzles"
 },
 
 "2":
@@ -20,23 +21,39 @@
     "title": "Pull The Pin",
     "category": "Game Application",
     "description": "Pull The Pin is a strategic puzzle game where each level poses a distinct challenge, designed using prefabs. With a unique progression-tailored level generator, the game adjusts to match players' advancing skills. Key features highlight its strategic gameplay, adaptive levels that grow with the player, and optimized mechanics for a seamless and challenging experience.",
-    "sitename": "project website",
+    "sitename": "-->Github Repo",
     "deliverables": ["project website"],
     "tools": ["C#", "Unity", "Adobe XD"],
     "coverphoto": "/photos/pin.jpeg",
     "img1": "/photos/pin1.jpg",
     "img2": "/photos/pin2.jpg",
     "img3": "/photos/pin3.jpg",
-    "partial": "poker"
+    "partial": "poker",
+    "url": "https://github.com/melisaozdoyuran2001/Cerebral-Puzzles"
 },
     
 "3":
 {
     "id" : "3",
+    "title": "SimpleSQL",
+    "category": "Systems Programming",
+    "description":"SimpleSQL is a four-phase project designed to simplify SQL query execution. The project kicks off with a lexical scanner for tokenizing SQL queries, followed by integrated parsing and analyzing modules for syntax and semantic checks. It then executes the validated queries and culminates with a robust suite of unit tests. Developed entirely in C, SimpleSQL offers a comprehensive look into SQL query handling.",
+    "sitename": "",
+    "deliverables": ["project website"],
+    "tools": ["C", "SQL"],
+    "coverphoto": "/photos/sqlcover.jpg",
+    "img1": "/photos/sql1.jpg",
+    "img2": "/photos/sql3.jpg",
+    "img3": "/photos/sql2.jpg",
+    "partial": "compiler"
+}, 
+"4":
+{
+    "id" : "4",
     "title": "Trip Planner",
     "category": "API Development",
     "description": "The Trip Planner API facilitates efficient route planning and points of interest discovery using geographical data. The core TripPlanner class integrates Dijkstra's algorithm for shortest path calculations, offers methods to locate points based on categories, and plans optimal routes between locations. It employs dictionaries for quick look-ups and a graph structure for representing roads and segments. Ideal for applications requiring advanced location-based services.",
-    "sitename": "project website",
+    "sitename": "",
     "deliverables": ["project website"],
     "tools": ["Python", "Racket"],
     "coverphoto": "/photos/cover5.jpeg",
@@ -46,13 +63,13 @@
     "partial": "planner"
 }, 
 
-"4": 
+"5": 
 {
-    "id" : "4",
+    "id" : "5",
     "title": "PokerPro",
     "category": "Strategy Application",
     "description": "Poker Pro is a user-friendly app designed for both novices and experienced players. It simplifies the poker experience with quick card input methods, either manually or via camera scan. The app offers actionable stats and betting strategies, all grounded in advanced algorithms like probability and equity calculations. Users can revisit their gameplay with the Saved Games feature. The primary goal is to gather feedback, ensuring the app meets user needs while keeping it straightforward and intuitive.    ",
-    "sitename": "project website",
+    "sitename": "",
     "deliverables": ["project website"],
     "tools": ["Python" ,"Figma"],
     "coverphoto": "/photos/cover1.jpeg",
@@ -62,13 +79,13 @@
     "partial": "poker"
 },
 
-"5":
+"6":
 {
-    "id" : "5",
+    "id" : "6",
     "title": "The NFC Lock",
     "category": "Hardware & Software Integration",
     "description": "In the aviation sector, baggage tagging is pivotal. Current plastic tags are unsustainable, prompting Infosys consultants to seek an eco-friendly, efficient alternative. Our solution, 'NFC Lock', is a metal tag with an NFC chip, paired with an app. Users obtain and attach the lock via a kiosk scan, track their luggage during flights, and upon landing, release and return the lock for reuse. Future enhancements will focus on user-friendliness, especially for those less tech-savvy.",
-    "sitename": "project website",
+    "sitename": "",
     "deliverables": ["project website"],
     "tools": ["Rhino"],
     "coverphoto": "/photos/nfc3.jpg",
@@ -78,13 +95,13 @@
     "partial": "lock"
 },
 
-"6":
+"7":
 {
-    "id" : "6",
+    "id" : "7",
     "title": "Pegboard Games",
     "category": "Cognitive Development Tool",
     "description": "At Chicago's Shirley Ryan Ability Lab, we crafted the 'Pegboard Games' under guidance from occupational therapist Erika Cooley. Designed for traumatic brain injury (TBI) patients, this tool offers two adaptable games targeting motor skills, reasoning, and memory. The 16''x16'' board features string-based designs and a navigable ball maze. However, its size and weight may pose storage and handling challenges, and it's breakable if dropped. ",
-    "sitename": "project website",
+    "sitename": "",
     "deliverables": ["project website"],
     "tools": ["SolidWorks" , "Excel", "Google Forms"],
     "coverphoto": "/photos/cover3.jpeg",
