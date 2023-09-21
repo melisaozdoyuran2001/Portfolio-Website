@@ -30,13 +30,16 @@
     font-family: alata;
     src: url(fonts/Alata-Regular.ttf);
 }
+@font-face {
+    font-family: hack;
+    src: url(fonts/Hack-Regular.ttf); 
+}
 
 
-body {
-    background-color: #fffcfc; 
-    font-family: consolaLight; 
-    overflow-x: hidden;
-   
+
+.highlight {
+    background-color: rgb(255, 233, 235); /* You can choose any color */
+    font-weight: bold;
 }
 
 .navbar{
@@ -47,7 +50,7 @@ body {
     height: 62px;
     z-index: 9;
     background-color:#fff3f9; 
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,2);
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 1);
     
 }
 
@@ -166,6 +169,7 @@ body {
     height: 60vh;
     width: 80%;
     margin: auto;
+    margin-bottom : 20%; 
 }
 
 .home-case{
@@ -173,7 +177,7 @@ body {
     height: 50vh; 
     margin: 0;
     position: absolute;
-    top: 27%;
+    top: 21%;
     left: 80%;
     transform: translate(-80%,-50%);
     z-index: 8;
@@ -197,34 +201,77 @@ body {
 
 .home-button {
     display: block;
-    text-decoration: none; 
-    font-family: alegreya; 
+    text-decoration: none;
+    font-family: alegreya;
     letter-spacing: 2px;
     transform: translate(270%,-550%);
     font-size: calc(max(14px, min(2vw, 24px)));
-    font-weight: 400; 
-    padding:2.5vh;
-    margin: 8vh; 
-    width: 15vw; 
+    font-weight: 400;
+    padding: 2.5vh;
+    margin: 8vh;
+    width: 15vw;
     height: 3vw;
     text-align: center;
     color: #ffffff;
     background-color: #6c0d1a;
-    border-radius: 1.5vw; 
+    border-radius: 1.5vw;
     transition: 0.2s;
-    font-weight: 500;
     box-shadow: 0px 0px 2px 0px rgba(217, 34, 34, 0.2);
-
+    position: relative; /* Added for the hover effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Added for the hover effect */
+    z-index: 1; /* Added to ensure the button itself is above the :after element */
 }
 
+.home-button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #ffcfdc;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+    z-index: 2;
+}
 
-
-
-.home-button:hover{ 
-    background-color: rgb(255, 235, 240);
+.home-button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
     font-weight: 700;
-    color: #de7e8b;
+    letter-spacing: 0.1em;
+    z-index: 3; 
+    transition: all 0.3s ease-in-out;
 }
+
+.home-button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.home-button:hover span {
+    color: #990035;
+    animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 
 .typewriter h1, .typewriter-1 h1, .typewriter-2 h1, .typewriter-6 h1, .typewriter-3 h1, .typewriter-4 h1{
@@ -314,7 +361,7 @@ body {
     border-radius: 50%;
     position: absolute;
     left: -13vw;
-    top: 45vw;
+    top: 34vw;
     z-index: -1;
     animation: pulse 3s infinite;
     overflow: hidden
@@ -346,37 +393,37 @@ body {
 
 .grey-links{
     background-color: #faf1f1;
-    height: 200px;
+    height: 300px;
     padding-top: 45px;
     padding-left: 5%;
     position: relative;
     z-index: 8;
     background-size:cover;
     width: 100%;
-    margin-top:30%;
+    margin-top:50px;
     margin-right: 0 ;
 }
 
 
-.linkedin-block, .instagram-block {
-    text-align: left;
-    background-color: #fff;
-    height :60px;
+.linkedin-block, .instagram-block, .github-block {
+    text-align: center;
+    background-color: #fff3f9; 
+    height: 60px;
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-#linkedin-logo, #instagram-logo {
+#linkedin-logo, #instagram-logo, #github-logo {
     color: #000000;
     font-size: 40px;
-    padding: 28px;
-    margin-top: -17px;
     transition: 0.3s;
+    vertical-align: middle; 
 }
 
 #github-logo {
-    color: #000000;
-    font-size: 40px;
-    padding: 28px;
-    padding-left: 40px;
+    padding: 0;
     transition: 0.3s;
 }
 
@@ -426,17 +473,37 @@ body {
 .logos {
     display: flex;
     justify-content: flex-end;
-    align-items: center; 
+    align-items: center;
+    position: fixed; 
+    bottom: 0; 
+    right: 0;
+    width: 100%; 
+    background-color:#fff3f9; 
+    z-index: 9;
+    padding: 10px; 
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-glass-container {
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    padding: 0.1rem;
+    margin: 10rem;
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
 }
 
 .contact-container {
-    width: 40%;
+    width: 60%;
     margin: auto;
     color:rgba(186, 41, 87, 0.885);
 }
 
 .contact-title {
-    margin-top : 100px;
+    margin-top : 70px;
     margin-bottom: 30px;
     font-family:  BGBold;
     text-transform: uppercase;
@@ -461,7 +528,7 @@ body {
 }
 
 input[type=text], select {
-    width: 93%;
+    width: 100%;
     font-size: 18px;
     font-family: BGLight;
     background-color:hsla(325, 97%, 75%, 0.055); 
@@ -473,28 +540,71 @@ input[type=text], select {
 }
 
 input[type=submit] {
+    height: 50px;
     width: 100%;
-    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    background-color: hsl(322, 100%, 92%);
     font-family: BGLight;
-    padding: 22px 14px;
+    font-size: 17px; /* Making the text bigger */
     margin: 10px 0px;
     margin-bottom: 70px;
-    background-color:rgba(255, 53, 117, 0.885);
-    color: white;
-    border: none;
-    border-radius: 0px;
-    -webkit-border-radius: 0px;
-    cursor: pointer;
-    transition: 0.2s;
 }
 
 input[type=submit]:hover {
-    background-color: rgb(255, 185, 210);
-    color: rgb(102, 102, 102);
+    box-shadow: .5px .5px 150px #ff6188;
+}
+
+input[type=submit]::after {
+    content: "Thanks";
+    height: 50px;
+    width: 100%; /* Adjust this if you want a fixed width like 150px */
+    background-color: hsl(322, 97%, 86%);
+    color: hsl(322, 97%, 86%);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type=submit]::before {
+    content: "Submit"; 
+    height: 50px;
+    width: 100%; 
+    background-color: hsl(322, 97%, 86%);
+    color: #ff6bbc;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(0px) scale(1.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type=submit]:hover::after {
+    transform: translateY(0) scale(1.2);
+}
+
+input[type=submit]:hover::before {
+    transform: translateY(-50px) scale(0) rotate(120deg);
 }
 
 input:focus, textarea:focus {
-    outline:none; 
+    outline: none;
 }
 
 #contact-thankyou {
@@ -535,7 +645,8 @@ input:focus, textarea:focus {
     margin-bottom: 50px;
 }
 .recent-title {
-    margin-top: 130px;
+    margin-top: 60px;
+    margin-bottom : 30px; 
     font-family: BGBold;
     text-transform: uppercase; 
     font-size: 32px;
@@ -551,7 +662,19 @@ input:focus, textarea:focus {
 
 .recent-title:hover {
     font-size: 34px;
-    
+  
+
+}
+
+.project-glass-container {
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    padding: 1rem;
+    margin: 8rem;
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
 }
 
 .work-obj { 
@@ -562,7 +685,7 @@ input:focus, textarea:focus {
     width: 350px;
     height: 220px;
     overflow: hidden;
-    margin-left: 15%;
+    margin-left: 12%;
     border-radius: 15px; 
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
     z-index: 7;
@@ -570,6 +693,7 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+
 }
 
 .work-obj:hover {
@@ -579,6 +703,7 @@ input:focus, textarea:focus {
         width:355px;
         height:225px; 
     }
+
 }
 
 .work-img {
@@ -627,16 +752,18 @@ input:focus, textarea:focus {
     background: rgba(255, 255, 255, 0); 
     backdrop-filter: blur(2px); 
     z-index: -1; 
+
 }
 
-#coming-soon {
-    font-size: 30px;
-    letter-spacing: 1px;
-    font-family: futuraLight;
-    text-transform: uppercase; 
-    text-align: center;
-    margin-top: 30%;
-    color: rgba(255, 53, 117, 0.885);
+.about-glass-container {
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    padding: 1rem;
+    margin: 8rem;
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
 }
 
 .about-info {
@@ -647,7 +774,7 @@ input:focus, textarea:focus {
 }
 
 .about-header {
-    margin-top: 130px;
+    margin-top: 70px;
     font-family: BGBold;
     text-transform: uppercase; 
     font-size: 32px;
@@ -709,6 +836,7 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+
 }
 .skill-header {
     font-family: alata;
@@ -1000,6 +1128,7 @@ input:focus, textarea:focus {
         padding-top: 2vh; 
         font-size: calc(3.5px + 1vw);
         font-weight: 20px;
+       
 
     }
     .home-button {
@@ -1011,6 +1140,7 @@ input:focus, textarea:focus {
         width: 17vw; 
         height: 2.8vw;
         font-weight: 50px;
+       
     
     }
     .pages {

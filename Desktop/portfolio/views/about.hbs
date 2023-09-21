@@ -1,14 +1,17 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel= "stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/jpeg" href="photos/pp2.jpg">
     </head>
     <body>
         {{> main}}
-        <div class="about-info">
-            <div class="about-header">Welcome to my page! </div>
+        <div class="about-glass-container"> <!-- New container for glass effect -->
+            <div class="about-info">
+                <div class="about-header">Welcome to my page! </div>
             <div class="about-headshot"></div>
             <div class="about-desc">
                    I'm a rising senior at Northwestern University's McCormick School of Engineering, where I'm earning my degree in Computer Science and minoring in Economics. 
@@ -20,11 +23,12 @@
             <div class="i-do">Python, C/C++/C#, JavaScript, HTML/CSS, R, SQL, STATA, Racket, MATLAB, Unix, Node.js.</div>
             <div class="skill-header">Technologies: </div> 
             <div class="i-do">Git, GitHub, SourceTree, Jira, Figma, Canva, Adobe Express, Unity, Google Cloud. </div>
-        </div>
-        <div class="about-next">
-            <div class="about-ready">learn more about me</div>
-            <a class="about-chat" href="/contact">let's chat</a>
-        </div>
+            </div>
+            <div class="about-next">
+                <div class="about-ready">learn more about me</div>
+                <a class="about-chat" href="/contact">let's chat</a>
+            </div>
+        </div> <!-- End of new container -->
         {{> footer}}
     </body>
 </html>

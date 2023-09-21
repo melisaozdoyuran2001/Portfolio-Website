@@ -1,30 +1,35 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-       <link rel="icon" type="image/jpeg" href="photos/pp2.jpg">
-
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/jpeg" href="photos/pp2.jpg">
     </head>
     <body>
-        {{>main}}
-        <div class="contact-container">
-            <div class="contact-title">let's chat</div>
-            <form class="contact-form" id="contact-form" action="/contact" method="POST">
-                <div class="contact-label">Your Name (required)</div>
-                <input type="text" id="fullname" name="fullname" placeholder="Your name...">
-                <div class="contact-label">Your Email (required)</div>
-                <input type="text" id="email" name="email" placeholder="Your email...">
-                <div class="contact-label">Subject</div>
-                <input type="text" id="subject" name="subject" placeholder="Subject...">
-                <div class="contact-label">Message</div>
-                <textarea rows="5" cols="50 " id="note" name="note" placeholder="Your message..."></textarea>
-                <input type="submit" value="Submit" >
-            </form>
-            <div id="contact-thankyou">Happy to be in touch! I'll get back to you shortly.</div>
-            <div id="submitted">{{submitted}}</div>
-        </div>
+        {{> main}}
+        <div class="contact-glass-container">
+            <div class="contact-container">
+                <div class="contact-title">let's chat</div>
+                <form class="contact-form" id="contact-form" action="/contact" method="POST">
+                   <div class="contact-label">Your Name (required)</div>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your name...">
+                    <div class="contact-label">Your Email (required)</div>
+                    <input type="text" id="email" name="email" placeholder="Your email...">
+                    <div class="contact-label">Subject</div>
+                    <input type="text" id="subject" name="subject" placeholder="Subject...">
+                    <div class="contact-label">Message</div>
+                    <textarea rows="5" cols="50 " id="note" name="note" placeholder="Your message..."></textarea>
+                    <input type="submit" value="Submit" >
+                </form>
+                <div id="contact-thankyou">Happy to be in touch! I'll get back to you shortly.</div>
+                <div id="submitted">{{submitted}}</div>
+            </div>
+        </div> 
         {{> footer}}
     </body>
 </html>
+
 <script>
     console.log(document.getElementById("submitted").innerHTML);
     var submitted = document.getElementById("submitted").innerHTML;

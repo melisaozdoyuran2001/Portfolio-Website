@@ -55,6 +55,10 @@ app.get("/about", (req, res) => {
     res.render("about");
 });
 
+app.get("/experience", (req, res) => {
+    res.render("experience");
+});
+
 app.get("/project/:pid([0-9]+)", (req, res) => {
     var pid = req.params.pid;
     var thisProj = projects[pid.toString()];
@@ -88,6 +92,9 @@ ${note}
         }
     });
 });
+
+  
+  
 
 const port = process.env.PORT || 8080;
 app.listen(port); 

@@ -3,21 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/jpg" href="photos/pp2.jpg">
-
     </head>
     <body>
         {{> main}}
-        <div class="my-work">
-            <div class="recent-title">my projects</div>
-        </div>
-        {{#each projects}}
-        <a class="work-obj" id="{{id}}" href="/project/{{id}}">
-            <img src="{{coverphoto}}" class="work-img" />
-            <div class="work-overlay"></div>
-            <div class="work-title">{{title}}</div>
-        </a>
-
-        {{/each}}
+        <div class="project-glass-container"> <!-- New container for glass effect -->
+            <div class="my-work">
+                <div class="recent-title">my projects</div>
+            </div>
+            {{#each projects}}
+            <a class="work-obj" id="{{id}}" href="/project/{{id}}">
+                <img src="{{coverphoto}}" class="work-img" />
+                <div class="work-overlay"></div>
+                <div class="work-title">{{title}}</div>
+            </a>
+            {{/each}}
+        </div> 
         {{> footer}}
     </body>
 </html>
