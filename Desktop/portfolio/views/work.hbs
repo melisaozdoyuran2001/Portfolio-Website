@@ -11,11 +11,18 @@
                 <div class="recent-title">my projects</div>
             </div>
             {{#each projects}}
-            <a class="work-obj" id="{{id}}" href="/project/{{id}}">
+            <div class="work-obj-container" id="{{id}}"onclick="window.location='/project/{{id}}'">
+                <a class="work-obj">
                 <img src="{{coverphoto}}" class="work-img" />
                 <div class="work-overlay"></div>
-                <div class="work-title">{{title}}</div>
-            </a>
+                </a>
+                <div class="title-cat" >
+                <a class="work-title">{{title}}</a> 
+                <a class = "work-cat">{{category}}</a>
+                </div>
+               
+            </div>
+           
             {{/each}}
         </div> 
         {{> footer}}

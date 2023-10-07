@@ -582,10 +582,10 @@ input:focus, textarea:focus {
 }
 .recent-title {
     margin-top: 60px;
-    margin-bottom : 30px; 
+    margin-bottom : 40px; 
     font-family: BGBold;
     text-transform: uppercase; 
-    font-size: 32px;
+    font-size: 43px;
     text-align: center;
     letter-spacing: 4.5px;
     color: rgba(152, 170, 255, 0.999);
@@ -598,8 +598,6 @@ input:focus, textarea:focus {
 
 .recent-title:hover {
     font-size: 34px;
-  
-
 }
 
 .project-glass-container {
@@ -610,18 +608,18 @@ input:focus, textarea:focus {
     border-radius: .7rem;
     padding: 1rem;
     margin: 8rem;
+    margin-bottom: 4rem; 
     box-shadow: 0px 0px 20px 1px #ffbb763f;
 }
 
-.work-obj { 
+.work-obj-container {
     display: inline-block;
     position:relative;
-    margin: 5px; 
-    margin-top: 50px;
+    margin: 10px; 
+    margin-bottom: 75px;
     width: 350px;
     height: 220px;
-    overflow: hidden;
-    margin-left: 12%;
+    margin-left:12%;
     border-radius: 15px; 
     box-shadow: 0 0 10px rgb(255, 255, 255); 
     z-index: 7;
@@ -629,10 +627,10 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
-
 }
 
-.work-obj:hover {
+
+.work-obj-container:hover {
     width:355px;
     height:225px; 
     .work-img {
@@ -642,11 +640,13 @@ input:focus, textarea:focus {
 
 }
 
+
 .work-img {
     object-fit: cover;
     width: 350px;
     height: 220px;
     transition : all 0.5s ease;
+    border-radius: 15px; 
 }
 
 .work-overlay {
@@ -661,16 +661,14 @@ input:focus, textarea:focus {
 }
 
 .work-title {
-    text-align: left;
-    width: 300px;
+    text-align: center;
+    width: 350px;
     height: 280px;
     position:absolute;
-    padding-left: 10px;
     line-height: 22.6;
-    bottom: -25px;
-    left:4;
+    bottom: -63px;
     z-index: 4;
-    color: rgba(152, 170, 255, 0.999);
+    color: rgba(175, 190, 255, 0.999);
     font-size: 21px;
     letter-spacing: 1px;
     font-family: BGBold;
@@ -689,6 +687,22 @@ input:focus, textarea:focus {
     backdrop-filter: blur(2px); 
     z-index: -1; 
 
+}
+
+.work-cat {
+   text-align: center; 
+    width: 350px;
+    height: 250px;
+    position:absolute;
+    line-height: 22.6;
+    bottom: -123px;
+    z-index: 4;
+    color: rgba(191, 255, 229, 0.999);
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: BGBold;
+    text-transform: uppercase; 
+   
 }
 
 .about-glass-container {
