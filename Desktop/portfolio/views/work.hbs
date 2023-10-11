@@ -2,29 +2,31 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/jpg" href="photos/pp2.jpg">
+        <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
+        <link rel="stylesheet" href="your-stylesheet.css">
     </head>
     <body>
         {{> main}}
-        <div class="project-glass-container"> <!-- New container for glass effect -->
-            <div class="my-work">
-                <div class="recent-title">my projects</div>
-            </div>
-            {{#each projects}}
-            <div class="work-obj-container" id="{{id}}"onclick="window.location='/project/{{id}}'">
-                <a class="work-obj">
-                <img src="{{coverphoto}}" class="work-img" />
-                <div class="work-overlay"></div>
-                </a>
-                <div class="title-cat" >
-                <a class="work-title">{{title}}</a> 
-                <a class = "work-cat">{{category}}</a>
+        <div class="my-work">
+            <div class="recent-title">my projects</div>
+            <div class="project-container">
+                {{#each projects}}
+                <div class="work-obj-container" id="{{id}}" onclick="window.location='/project/{{id}}'">
+                    <div class="image-wrapper">
+                        <a class="work-obj">
+                            <img src="{{coverphoto}}" class="work-img" />
+                            <div class="work-overlay"></div>
+                        </a>
+                    </div>
+                    <div class="title-cat">
+                        <a class="work-title">{{title}}</a>
+                        <a class="work-cat">{{category}}</a>
+                    </div>
                 </div>
-               
+
+                {{/each}}
             </div>
-           
-            {{/each}}
-        </div> 
+        </div>
         {{> footer}}
     </body>
 </html>

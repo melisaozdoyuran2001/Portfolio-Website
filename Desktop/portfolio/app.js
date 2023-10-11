@@ -59,6 +59,10 @@ app.get("/experience", (req, res) => {
     res.render("experience");
 });
 
+app.get("/fun", (req, res) => {
+    res.render("fun");
+});
+
 app.get("/project/:pid([0-9]+)", (req, res) => {
     var pid = req.params.pid;
     var thisProj = projects[pid.toString()];
