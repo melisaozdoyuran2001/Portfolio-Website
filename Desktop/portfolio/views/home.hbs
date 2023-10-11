@@ -7,6 +7,20 @@
     {{> main }}
     <body>
         <div class="home">
+            <div class="switch-container">
+            <label class="switch" data-tooltip="Toggle this switch to enable or disable the cosmic visualization features :)">
+                <div class="round">
+                    <input name="onoff" id="onoff" type="checkbox">
+                    <div class="back">
+                        <label for="onoff" class="but">
+                            <span class="on">0</span>
+                            <span class="off">I</span>
+                        </label>
+                    </div>
+                </div>
+            </label>
+            </div>
+
              <div class="planet planet-1"></div>
             <div class="planet planet-2"></div>
              <div class="planet planet-3"></div>
@@ -52,6 +66,34 @@
         </div>
         
         {{> footer}}
+
+        <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  const onoffSwitch = document.getElementById('onoff');
+  const homeElement = document.querySelector('.home');
+  const bodyElement = document.querySelector('body');
+  const titleElement = document.querySelector('.typewriter-1 h1');
+  const buttonContainer = document.querySelector('.button-container');
+
+  onoffSwitch.addEventListener('change', function() {
+    console.log("Switch toggled!");  // Debugging line
+    if (this.checked) {
+      homeElement.classList.add('show-planets', 'show-stars');
+      bodyElement.classList.add('saturn-cursor');
+      titleElement.classList.add('change-font');
+      buttonContainer.classList.add('change-button-font');
+    } else {
+      homeElement.classList.remove('show-planets', 'show-stars');
+      bodyElement.classList.remove('saturn-cursor');
+      titleElement.classList.remove('change-font');
+       buttonContainer.classList.remove('change-button-font');
+    }
+  });
+});
+
+
+
+    </script>
     </body>
    
 </html>

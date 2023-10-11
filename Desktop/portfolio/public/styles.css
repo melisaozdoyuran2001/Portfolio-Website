@@ -42,7 +42,6 @@
 
 
 body {
-    cursor: none;
     background-image: url("photos/aldebaran-s-qtRF_RxCAo0-unsplash.jpg");
     background-size: cover;  
     background-position: center;  
@@ -51,19 +50,46 @@ body {
     background-color:#00072D; 
     overflow-x: hidden;
 }
+
+
+.switch {
+    position: relative;
+  }
   
-#cursor {
+  .switch:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+    white-space: nowrap;
+    font-family: Chelsea;
+    font-size: 15px;
+    background-color: darkblue;
+  }
+  
+
+  
+/* For Saturn cursor */
+.saturn-cursor #cursor {
+    cursor: hidden;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(244, 175, 0, 0.882), rgba(255, 224, 87, 0.529)); /* Add gradient */
+    background: radial-gradient(circle, rgba(244, 175, 0, 0.882), rgba(255, 224, 87, 0.529));
     position: absolute;
     z-index: 9999;
     pointer-events: none;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-#cursor::before {
+.saturn-cursor #cursor::before {
     content: "";
     position: absolute;
     height: 10px;
@@ -73,14 +99,131 @@ body {
     border-radius: 10px;
     z-index: -1;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-#cursor::before {
     width: 60px;
     transform: translate(-50%, -50%) rotate(135deg);
 }
 
+.change-font {
+    font-family: Chelsea !important;
+  }
 
+  .change-button-font .home-button {
+    font-family: Chelsea !important;
+  }
+
+
+  .switch-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    z-index: 1000;
+  }
+  
+  
+  input[name="onoff"] {
+    display: none;
+}
+  .on,.off {
+    position: absolute;
+    text-align: center;
+    text-shadow: inset 1px 1px 1px black;
+    width: 100%;
+  }
+  
+  .on {
+    color: #fff;
+    top: 10px;
+    transition: all 0.1s;
+    font-family: sans-serif
+  }
+  
+  .off {
+    color: #636161;
+    bottom: 5px;
+    transition: all 0.1s;
+    transform: scaleY(0.85);
+  }
+  
+  .but {
+    background-color: rgb(3, 3, 66); 
+    border-radius: 400px 400px 400px 400px / 400px 400px 300px 300px;
+    border-bottom-width: 0px;
+    box-shadow: inset 8px 6px 5px -7px rgba(0,0,0,1)
+      ,inset -8px 6px 5px -7px rgb(20, 16, 71)
+      ,inset 0 -3px 2px -2px rgba(200,200,200,.5)
+      ,0 3px 3px -2px rgb(32, 29, 84)
+      ,inset 0 -230px 60px -200px rgba(255,255,255,.2)
+      ,inset 0 220px 40px -200px rgba(25, 16, 83, 0.3);
+    display: block;
+    font-size: 17px;
+    height: 60px;
+    position: relative;
+    transition: all 0.2s;
+    width: 40px;
+  }
+  
+  .back {
+    background-color: rgb(2, 2, 59);
+    background-image: -webkit-linear-gradient(0deg, transparent 30%, transparent 65%)
+      ,-webkit-linear-gradient(0deg, rgba(41, 25, 134, 0) 30%, rgba(150,150,150,.1) 50%, rgba(150,150,150,0) 70%);
+    border-radius: 115px;
+    box-sizing: border-box;
+    height: 85px;
+    padding: 4px 4px;
+    transition: all 0.2s;
+    width: 50px;
+  }
+  
+  input:checked + .back .on,input:checked + .back .off {
+    text-shadow: inset 1px 1px 1px black;
+  }
+  
+  input:checked + .back .on {
+    color: rgb(141, 141, 141);
+    top: 10px;
+    transform: scaleY(0.85);
+  }
+  
+  input:checked + .back .off {
+    color: #fff;
+    bottom: 5px;
+    transform: scaleY(1);
+  }
+  
+  input:checked + .back .but {
+    background: rgb(2, 2, 73);
+    background-image: -webkit-radial-gradient(55% 18%,circle closest-corner,rgba(0,0,0,.3) ,rgba(0,0,0,0));
+    border-radius: 410px 410px 410px 410px / 310px 310px 410px 410px;
+    box-shadow: inset 8px -4px 5px -7px rgb(30, 20, 95)
+      ,inset -8px -4px 5px -7px rgb(26, 11, 109)
+      , 0 -3px 8px -4px rgba(250,250,250,.4)
+      ,inset 0 3px 4px -2px rgb(30, 13, 76)
+      ,inset 0 280px 40px -200px rgba(0,0,0,.2)
+      ,inset 0 -200px 40px -200px rgba(180,180,180,.2);
+    margin-top: 20px;
+  }
+  
+  input:checked + .back {
+    background-image: -webkit-linear-gradient(90deg, rgb(14, 0, 59) 30%, transparent 65%)
+      ,-webkit-linear-gradient(180deg, rgba(37, 16, 89, 0) 0%, rgba(250,250,250,.4) 50%, rgba(150,150,150,0) 100%);
+    box-shadow: 28px 28px 28px -28px rgba(29, 14, 104, 0.1)
+      ,-28px 28px 28px -22px rgba(0,0,0,.1)
+      ,0 30px 30px 0px rgba(36, 22, 103, 0.2)
+      ,inset 0 1px 2px 0 rgba(30, 8, 120, 0.6);
+    padding: 2px 4px;
+  }
+  
+  .l,.r {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .round,#onoff,.back,.but,.on,.off {
+    user-select: none;
+  }
 
 
 .highlight {
@@ -101,7 +244,7 @@ body {
 
 .name{
     text-decoration: none;
-    font-family: Chelsea;
+    font-family: futuraLight;
     font-size: 16px;
     position: absolute;
     top: 20px;
@@ -231,7 +374,7 @@ body {
 .home-box {
     color:#ffffff;
     font-size: 40px;
-    font-family:Chelsea; 
+    font-family:BGBold; 
     letter-spacing: 1px;
     padding-top: 20% ; 
 }
@@ -248,15 +391,15 @@ body {
     padding-top: 2vh; 
     color:#c33245;
     font-size: calc(2px + 1vw);
-    font-family: Chelsea; 
+    font-family: BGBold; 
     letter-spacing: 1px;
 }
 
 .home-button {
     text-decoration: none;
-    font-family: Chelsea; 
+    font-family: BGLight; 
     letter-spacing: 2px;
-    font-size: calc(max(14px, min(2vw, 24px)));
+    font-size: calc(max(20px, min(2vw, 40px)));
     font-weight: 400;
     padding: 2.5vh;
     margin: 1vh;  
@@ -339,6 +482,8 @@ body {
 }
 
 .planet {
+    visibility: hidden;  
+    opacity: 0;  
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -404,6 +549,8 @@ body {
 }
 
 .star {
+    visibility: hidden;  
+    opacity: 0;  
     width: 15px;
     height: 15px;
     background-color: rgb(238, 255, 0);
@@ -454,6 +601,19 @@ body {
     16%, 100% {
         opacity: 0;
     }
+}
+
+
+/* For planets */
+.show-planets .planet {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* For stars */
+.show-stars .star {
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -632,8 +792,8 @@ a {
     text-align: center; 
 }
 
-.contact-from {
-    font-family: BGLight;
+.contact-form {
+    font-family: BGBold;
     font-size: 17px; 
 }
 
@@ -643,7 +803,7 @@ a {
     width: 100%;
     margin-bottom: 0px;
     margin-top : 15px;
-    font-family: BGLight;
+    font-family: BGBold;
     font-size: 22px; 
     
 }
