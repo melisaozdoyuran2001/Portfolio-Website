@@ -24,5 +24,6 @@ Deployment: Hosted on Appspot
 ## 🤝 Contribute
 Feedback, bug reports, and pull requests are welcome! You can also send a message to me through the Let's Chat page. 
 
+![Uploading Screen Shot 2023-10-10 at 9.52.25 PM.png…]()
 
- <img width="1439" alt="Screen Shot 2023-10-10 at 3 09 53 PM" src="https://github.com/melisaozdoyuran2001/melisaozdoyuran2001/assets/123209674/d5890de3-84e1-4d2b-b692-438dce13de0e">
+
