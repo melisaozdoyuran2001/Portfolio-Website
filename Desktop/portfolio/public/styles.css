@@ -38,11 +38,24 @@
     font-family: Chelsea;
     src: url(fonts/ChelseaMarket-Regular.ttf); 
 }
-
-
+@font-face {
+    font-family: zenKaku;
+    src: url(fonts/ZenKakuGothicNew-Medium.ttf); 
+}
+@font-face {
+    font-family: zenKakuL;
+    src: url(fonts/ZenKakuGothicNew-Light.ttf); 
+}
+@font-face {
+    font-family: Blanka;
+    src: url(fonts/Blanka-Regular.otf); 
+}
+@font-face {
+    font-family: zenakuR;
+    src: url(fonts/ZenKakuGothicNew-Regular.ttf); 
+}
 
 body {
-    background-image: url("photos/aldebaran-s-qtRF_RxCAo0-unsplash.jpg");
     background-size: cover;  
     background-position: center;  
     background-repeat: no-repeat;  
@@ -51,12 +64,25 @@ body {
     overflow-x: hidden;
 }
 
+#projpage {
+    background-image: url(photos/bg4.jpg);
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-attachment: fixed; 
+    background-color:#00072D; 
+    overflow-x: hidden;
+}
 
+#homepage {
+    overflow-y: hidden;
+}
+/*TOGGLE SWITCH  */
 .switch {
     position: relative;
   }
   
-  .switch:hover::after {
+.switch:hover::after {
     content: attr(data-tooltip);
     position: absolute;
     top: 100%;
@@ -72,9 +98,7 @@ body {
     font-family: Chelsea;
     font-size: 15px;
     background-color: darkblue;
-  }
-  
-
+}
   
 /* For Saturn cursor */
 .saturn-cursor #cursor {
@@ -107,12 +131,12 @@ body {
     font-family: Chelsea !important;
   }
 
-  .change-button-font .home-button {
+.change-button-font .home-button {
     font-family: Chelsea !important;
-  }
+}
 
 
-  .switch-container {
+.switch-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -120,10 +144,10 @@ body {
     position: absolute;
     top: 20px;
     z-index: 1000;
-  }
+}
   
   
-  input[name="onoff"] {
+input[name="onoff"] {
     display: none;
 }
   .on,.off {
@@ -231,32 +255,23 @@ body {
     font-weight: bold;
 }
 
+
+
+/*NAV BAR*/ 
 .navbar{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 62px;
+    height: 70px;
     z-index: 9;
     background-color:#fff3f900; 
     
 }
 
-.name{
-    text-decoration: none;
-    font-family: futuraLight;
-    font-size: 16px;
-    position: absolute;
-    top: 20px;
-    left: 80px; 
-    color: #ffffff;
-    letter-spacing: 0.5px; 
-    transition: color 0.3s ease, font-size 0.3s ease;
-}
-
-.name:hover{
-    color:#8dbdff;
-    font-size: 18px;
+.blurred-navbar {
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.7s ease-in-out;
 }
 
 .main-headshot {
@@ -267,9 +282,9 @@ body {
     background-image:   url("photos/myface.jpg");
     font-family: futura;
     font-size: 16px;
-    width: 50px;
-    height: 50px;
-    top: 7px; 
+    width: 55px;
+    height: 55px;
+    top: 10px; 
     left: 15px; 
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
@@ -278,8 +293,43 @@ body {
 }
 
 .main-headshot:hover {
-    width: 52px;
-    height: 52px;
+    width: 57px;
+    height: 57px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;  
+    align-items: center; 
+}
+
+.home-button {
+    display: inline-block; 
+    font-family:  zenakuR, sans-serif; /* Use the specified font */
+    color: #ffffff; /* Initial color of the text */
+    font-size: 27px; /* Initial font size */
+    transition: color 0.3s, font-size 0.3s; /* Smooth transition for color and font-size */
+    /* Add other necessary styling like padding, margin, etc. as per your design */
+    margin-top: 18px; 
+    margin-left: 25px; 
+    margin-right: 25px; 
+    z-index: 10; 
+}
+
+.home-button:hover {
+    color: yellow; /* Change color to yellow on hover */
+    font-size: 28px; /* Increase font size on hover */
+    font-family: zenKaku, sans-serif;
+    margin-top: 18px; 
+
+}
+
+.current-page {
+    color: yellow; /* Change color to yellow on hover */
+    font-size: 28px; /* Increase font size on hover */
+    font-family: zenKaku, sans-serif;
+    margin-top: 18px; 
 }
 #bars{
     color: #ffffff;
@@ -354,38 +404,9 @@ body {
     
 }
 
-.home {
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    margin-bottom : 20%; 
-}
 
-.home-case {
-    width: 80vw; 
-    height: 50vh; 
-    margin: auto;
-    position: relative;
-    z-index: 8;
-    margin-bottom: 500px;
-}
+/*LANDING PAGE */
 
-
-.home-box {
-    color:#ffffff;
-    font-size: 40px;
-    font-family:BGBold; 
-    letter-spacing: 1px;
-    padding-top: 20% ; 
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;  
-    justify-content: center;  
-    align-items: center; 
-    margin-top: 1rem; 
-}
 
 .my-info{
     padding-top: 2vh; 
@@ -393,92 +414,6 @@ body {
     font-size: calc(2px + 1vw);
     font-family: BGBold; 
     letter-spacing: 1px;
-}
-
-.home-button {
-    text-decoration: none;
-    font-family: BGLight; 
-    letter-spacing: 2px;
-    font-size: calc(max(20px, min(2vw, 40px)));
-    font-weight: 400;
-    padding: 2.5vh;
-    margin: 1vh;  
-    width: 15vw;
-    height: 3vw;
-    text-align: center;
-    color: #ffffff;
-    background-color: #ffdee23a;
-    border-radius: 1.5vw;
-    transition: 0.5s;
-    box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1; 
-    background: linear-gradient(90deg, #03a8f400, #ffc0e439, #ffeb3b2d, #88d9ff07);
-    background-size: 300%;
-    border-radius: 30px;
-    z-index: 1;
-    position: relative; 
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-}
-
-.home-button:hover {
-  animation: ani 2s linear infinite;
-  border: none;
-}
-
-@keyframes ani {
-  0% {
-    background-position: 0%;
-  }
-
-  100% {
-    background-position: 400%;
-  }
-}
-
-.home-button:before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-  background: linear-gradient(90deg, #03a8f413, #ffa4a422, #ffeb3bc2, #03a8f419);
-  background-size: 400%;
-  border-radius: 35px;
-  transition: 1s;
-}
-
-.home-button:hover::before {
-  filter: blur(50px);
-}
-
-.home-button:active {
-  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a8f450);
-}
-
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.70);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.home {
-    position: relative;
-    width: 100%;
-    height: 100vh;
 }
 
 .planet {
@@ -616,37 +551,115 @@ body {
     opacity: 1;
 }
 
-
-
-
-
-.typewriter-container {
-    text-align: center;  
+.home-case {
+    color: white;
+    margin-top: 240px;
+    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: fit-content; /* Adjust the width as needed */
+    
 }
-  
+.typewriter-container {
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin: auto;
+    border-radius: 60px;
+    background: rgba(255, 81, 81, 0.05);
+}
+
+.typewriter-1, .typewriter-2, .typewriter-3 {
+    line-height: 1; /* Adjusted line height */
+    margin: 0; /* Removed all default margins */
+    padding-left: 45px; /* If needed, adjust or remove padding */
+    padding-right: 40px;
+}
+
 .typewriter-1 h1 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: Blanka; 
+    font-size: 65px;
+    letter-spacing: 8px;
+    animation-fill-mode: both;
+    margin-bottom: 0;
+    animation:
+        typing 1.2s steps(70, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+.typewriter-2 {
     display: inline-block; 
     overflow: hidden;
     white-space: nowrap;
-    margin: auto;
-    
     animation:
-      typing 2s steps(40, end),
-      blink-caret .75s step-end infinite;
+    typing 2s steps(70, end) 1.2s, /* Add 2s delay here */
+    blink-caret 0.75s step-end infinite 1.2s; 
     animation-fill-mode: both;
+    text-transform: uppercase ;
+    font-family: zenakuR , sans-serif;
+    margin-bottom: 0;
+    font-size: 27px;
+    margin-bottom: -40px;
+
+
 }
-  
+
+.typewriter-3 {
+    display: inline-block; 
+    overflow: hidden;
+    white-space: nowrap;
+    animation:
+    typing 2s steps(70, end) 2.3s,
+    blink-caret 6s step-end infinite 2.3s; 
+  animation-fill-mode: both;
+  text-transform: uppercase ;
+    font-family: zenakuR , sans-serif;
+    
+    margin-bottom: 0;
+    
+    font-size: 27px;
+    text-transform: uppercase; 
+    padding-bottom: 20px;
+
+
+}
+
+.highlight-software-engineer {
+    color: #FAFF00;
+    font-family:zenKaku; 
+}
+
+.highlight-user-experience {
+    background-color: #fdff9b38; /* This will highlight the text with light yellow */
+}
+
+.underline-technology {
+    text-decoration: underline;
+}
+
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+        visibility: hidden;
+    }
+    to {
+        width: 100%;
+        visibility: visible;
+    }
 }
-  
+
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: orange; }
+    50% { border-color: black; }
 }
-  
-
 
 @keyframes pulse {
     0% {
@@ -663,12 +676,36 @@ body {
 a {
     text-decoration: none;
 }
+
+.transition-container {
+    display: flex;
+    justify-content: center; /* Center the circles horizontally */
+    align-items: center; /* Align the circles vertically in the middle */
+    height: 1px; /* Adjust the height as needed */
+}
+
+.circle {
+    width: 20px; /* Size of the circle */
+    height: 20px; /* Size of the circle */
+    border-radius: 50%; /* Makes the div a circle */
+    margin: 0 10px; /* Spacing between circles */
+    cursor:pointer;
+}
+
+.circle1 { background-color: rgb(125, 227, 255)}
+.circle2 { background-color: rgb(145, 255, 145); }
+.circle3 { background-color: rgb(250, 151, 255); }
+
+
+
+
+
+/*FOOTER*/
 .footer{
     color: rgba(255, 247, 247, 0.134);
     background-color: #ffffff29;
 
 }
-
 
 .grey-links{
     background-color: #faf1f120;
@@ -683,23 +720,32 @@ a {
     margin-right: 0 ;
 }
 
+.logos {
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Align children vertically */
+    position: fixed; /* Fixed positioning relative to the viewport */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    right: 0; /* Align to the right of the viewport */
+    width: 100%; /* Full width of the viewport */
+    height: 70px;
+}
 
 .linkedin-block, .instagram-block, .github-block {
-    text-align: center;
-    background-color: #ffffff00; 
-    height: 60px;
-    flex: 1; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    margin: 0 18px; /* Adjust the space between the logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #linkedin-logo, #instagram-logo, #github-logo {
+    font-size: 45px;
     color: #ffffff;
-    font-size: 40px;
     transition: 0.3s;
-    vertical-align: middle; 
 }
+
+
 
 #github-logo {
     padding: 0;
@@ -708,23 +754,23 @@ a {
 
 #github-logo:hover {
     color:hsl(133, 99%, 37%);
-    font-size: 41px;
+    font-size: 55px;
 }
 
 
 #linkedin-logo:hover {
     color:hsl(243, 100%, 60%);
-    font-size: 41px;
+    font-size: 55px;
 }
 
 #instagram-logo:hover {
     color:hsl(281, 100%, 54%);
-    font-size: 41px;
+    font-size: 55px;
 }
 
 .pages {
     text-transform: uppercase; 
-    color:rgba(128, 149, 255, 0.999);
+    color: rgb(255, 217, 0);
     font-weight: 400;
     letter-spacing: 2px;
     margin-bottom: 8px;
@@ -734,7 +780,7 @@ a {
 }
 
 .grey-link {
-    color:rgb(141, 228, 255);
+    color:rgb(255, 255, 181);
     font-family: futuraLight;
     letter-spacing: 2px;
     font-weight: 400px;
@@ -749,21 +795,9 @@ a {
     color:hsl(322, 97%, 86%);
 }
 
-.logos {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: fixed; 
-    bottom: 0; 
-    right: 0;
-    width: 100%; 
-    background-color:#fff3f900; 
-    z-index: 9;
-    padding: 10px; 
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
-}
 
 
+/* CONTACT */ 
 .contact-glass-container {
     background-color: rgba(255, 255, 255, 0.074);
     border: 1px solid rgba(255, 255, 255, 0.222);
@@ -771,35 +805,36 @@ a {
     backdrop-filter: blur(20px);
     border-radius: .7rem;
     padding: 0.1rem;
-    margin: 10rem;
+    margin :10rem;
     box-shadow: 0px 0px 20px 1px #ffbb763f;
+}
+
+.contact-title{
+    text-align:center;
+    color :rgb(238, 255, 0);
+    font-family: zenakuR;
+    margin-bottom: 0;
+    margin-top: 80px;
+    text-transform: uppercase;
+    font-size: 33px;
 }
 
 .contact-container {
     width: 60%;
     margin: auto;
     color:rgba(152, 170, 255, 0.999);
-}
-
-.contact-title {
-    margin-top : 70px;
-    margin-bottom: 30px;
-    font-family:  Chelsea;
-    text-transform: uppercase;
-    font-size: 35px;
-    letter-spacing: 4.5px;
-    color:rgba(152, 170, 255, 0.999);
-    text-align: center; 
+    margin-top:-40px;
 }
 
 .contact-form {
-    font-family: BGBold;
+    font-family: zenakuR;
     font-size: 17px; 
+    padding-top: 60px;
 }
 
 .contact-label { 
     text-align: left;
-    color: rgb(255, 255, 255);
+    color: white; 
     width: 100%;
     margin-bottom: 0px;
     margin-top : 15px;
@@ -807,11 +842,14 @@ a {
     font-size: 22px; 
     
 }
+#note {
+    color:white;
+}
 
 input[type=text], select {
     width: 100%;
     font-size: 20px;
-    font-family: BGLight;
+    font-family: zenakuR;
     color: white;
     background-color:hsla(0, 0%, 100%, 0.055); 
     padding: 22px 14px;
@@ -831,10 +869,11 @@ input[type=submit] {
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     background-color: hsla(60, 100%, 72%, 0.594);
-    font-family: BGLight;
+    font-family: zenakuR;
     font-size: 17px; 
     margin: 10px 0px;
     margin-bottom: 70px;
+    color: white; 
 }
 
 input[type=submit]:hover {
@@ -894,8 +933,8 @@ input:focus, textarea:focus {
     padding-bottom: 190px;
     padding-top: 8px;
     padding-bottom: 100px;
-    color:rgba(186, 41, 87, 0.885);
-    font-size: 30px;
+    color:rgba(236, 255, 172, 0.885);
+    font-size: 35px;
     font-family: BGLight;
     letter-spacing:  0.4px;
     line-height: 1.6;
@@ -921,29 +960,13 @@ input:focus, textarea:focus {
     display: none; 
 }
 
+
+
+/* WORK */ 
 .recent {
     text-align: center;
     margin: auto;
     margin-bottom: 50px;
-}
-.recent-title {
-    margin-top: 60px;
-    margin-bottom : 40px; 
-    font-family: BGBold;
-    text-transform: uppercase; 
-    font-size: 43px;
-    text-align: center;
-    letter-spacing: 4.5px;
-    color: rgba(152, 170, 255, 0.999);
-    padding-left: 20px;
-    z-index: 7;
-    position: relative;
-    transition : all 0.5s ease;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .project-container {
@@ -953,39 +976,45 @@ input:focus, textarea:focus {
     align-items: center;
 }
 
-.recent-title:hover {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
+.project-container:hover {
+    cursor: pointer;
 }
-
-
 
 .my-work {
     text-align: center;
+    font-family: Chelsea;
 }
-
 .work-obj-container {
-    margin-left: 75px;
+    -webkit-backdrop-filter: blur(70px);
+    backdrop-filter: blur(20px);
+     background-color: #0575E6;
+    margin-left: 100px;
     margin-right: 75px;
     display: inline-block;
     position: relative;
     margin-bottom: 75px;
-    margin-top: 60px;
+    margin-top: 170px;
     width: 400px;  
     height: 270px; 
     border-radius: 15px;
-    box-shadow: 0 0 10px rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
     z-index: 7;
     transition: all 0.5s ease;
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+    font-family: zenKaku;
+}
+.work-obj-container:hover {
+    transform: scale(1.03);
 }
 
-.work-obj-container:hover {
-    width: 405px;
-    height: 275px;
+.image-wrapper {
+    transition: all 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: scale(1.03);
 }
 
 .work-img {
@@ -1017,14 +1046,14 @@ input:focus, textarea:focus {
     line-height: 22.6;
     bottom: -63px;
     z-index: 4;
-    color: rgba(175, 190, 255, 0.999);
+    color: rgba(255, 252, 78, 0.999);
     font-size: 21px;
     letter-spacing: 1px;
-    font-family: BGBold;
     text-transform: uppercase; 
     overflow: hidden;
     left: 50%;  
     transform: translateX(-17.5%);
+    font-family: zenKaku;
 }
 
 .work-title::before {
@@ -1049,16 +1078,20 @@ input:focus, textarea:focus {
     line-height: 22.6;
     bottom: -155px;
     z-index: 4;
-    color: rgba(191, 255, 229, 0.999);
+    color: rgba(157, 255, 216, 0.999);
     font-size: 15px;
     letter-spacing: 1px;
-    font-family: BGBold;
     text-transform: uppercase; 
     left: 50%;  
     transform: translateX(-50%);
+    font-family: zenKaku;
    
 }
 
+
+
+
+/*ABOUT ME*/
 .about-glass-container {
     background-color: rgba(255, 255, 255, 0.074);
     border: 1px solid rgba(255, 255, 255, 0.222);
@@ -1066,35 +1099,30 @@ input:focus, textarea:focus {
     backdrop-filter: blur(20px);
     border-radius: .7rem;
     padding: 1rem;
-    margin: 8rem;
+    margin: 10rem;
     box-shadow: 0px 0px 20px 1px #ffbb763f;
 }
 
 .about-info {
     width: 85%;
     margin: auto;
-    color: rgba(152, 170, 255, 0.999);
-    font-family: BGLight;
+    color: hsl(60, 97%, 86%);
+    font-family: zenakuR;
 }
 
 .about-header {
-    margin-top: 70px;
-    font-family: BGBold;
+    margin-top: 40px;
     text-transform: uppercase; 
-    font-size: 32px;
+    font-size: 36px;
     text-align: center;
-    letter-spacing: 4.5px;
-    color: rgba(181, 194, 255, 0.999);
+    color: rgb(238, 255, 0);
+    font-family: zenKaku;
     padding-left: 20px;
     transition : all 0.5 ease;
     z-index: 7;
     position: relative;
 
 }
-
-.about-header:hover {
-    font-size: 34px;
-} 
 
 @keyframes fadeIn {
     0% {opacity: 0;}
@@ -1115,24 +1143,26 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+    font-family: Chelsea;
 
 }
 
 .about-desc {
-    font-family: alata;
     margin-top: 20px;
     font-size: 20px;
     line-height: 28.8px;
-    color: rgba(220, 225, 255, 0.999);
+    color: rgb(255, 255, 255);
     z-index: 7;
     position: relative;
+    font-family: zenKaku;
    
 }
 
 .my-skills {
     font-family: alata;
     margin-top: 33px;
-    color: rgba(128, 173, 255, 0.885);
+    color: rgb(238, 255, 0);
+    font-family: zenKaku;
     text-transform: uppercase;
     margin-bottom: 10px;
     letter-spacing: 1px;
@@ -1140,11 +1170,12 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+    
 
 }
 .skill-header {
-    font-family: alata;
-    color: rgba(144, 163, 255, 0.999);
+    color: rgb(238, 255, 0);
+    font-family: zenKaku;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 20px;
@@ -1153,7 +1184,6 @@ input:focus, textarea:focus {
     animation-fill-mode: forwards;
     opacity: 0;
 }
-
 
 .i-do {
     font-family: alata;
@@ -1166,13 +1196,15 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+    font-family: zenKaku;
 }
 
 .about-next {
     height: 333px;
     margin-top: 50px; 
     background-color: #e2e2e261;
-    color: rgba(152, 170, 255, 0.999);
+    color: rgb(238, 255, 0);
+    font-family: zenKaku;
     text-align: center;
     margin-bottom: 0px;
     padding-bottom: 0px;
@@ -1180,16 +1212,18 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+  
 }
 
 .about-ready {
-    font-family: BGBold;
+    font-family: zenKaku;
     font-size: 25px; 
     padding-top: 97px;
     text-transform: uppercase;
     padding-bottom: 63px;
     letter-spacing: 3px;
     transition : all 0.3s ease;
+   
 }
 
 .about-ready:hover {
@@ -1201,10 +1235,10 @@ input:focus, textarea:focus {
     padding: 20px 20px; 
     margin-top: 200px; 
     text-transform: uppercase;
-    font-family: BGBold ;
     letter-spacing: 3px;
     color: #fff;
     transition : all 0.5s ease;
+    font-family: zenKaku;
 }
 
 .about-chat:hover {
@@ -1212,31 +1246,36 @@ input:focus, textarea:focus {
     background-color: #fff;
 }
 
+
+
+/*PROJECT */ 
 .project-title-section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: Chelsea;
 }
 
 .project-block {
     justify-content: center;
     align-items: center;
     padding-left : 10%;
+    font-family: Chelsea;
 
 }
 
 .project-title {
     width: 50%;
     position: relative;
-    margin-top:  12%;
+    margin-top:  -8%;
     text-align: center; 
-    font-family: BGBold; 
+    font-family: Chelsea; 
 }
 
 .project-name , .project-category {
     letter-spacing: 2px;  
-    color:rgba(190, 201, 255, 0.999);
+    color:rgba(150, 168, 255, 0.999);
 }
 
 .project-name {
@@ -1247,6 +1286,7 @@ input:focus, textarea:focus {
 .project-category {
     font-size:  20px ;
     top: 186px; 
+    font-family: Chelsea;
     
 }
 
@@ -1254,7 +1294,7 @@ input:focus, textarea:focus {
     margin-left: 10%;
     font-size: 50px; 
     width: 65%;
-    font-family:  BGLight;
+    font-family: Chelsea;
     color: #ffffff;
     
 }
@@ -1264,10 +1304,12 @@ input:focus, textarea:focus {
     font-size: 30px;
     line-height:  28.8px;
     text-align: center;
+    font-family: futuraLight;
 }
 
 .project-web {
-    margin-top : 10px
+    margin-top : 10px;
+    font-family: Chelsea;
 }
 
 #project-arrow {
@@ -1279,7 +1321,7 @@ input:focus, textarea:focus {
 
 .project-web-name {
     padding-left: 30px;
-    font-family : BGBold ;
+    font-family: Chelsea;
     font-size:  30px;
     color: #ffffff; 
 }
@@ -1296,12 +1338,13 @@ input:focus, textarea:focus {
 .project-tools {
     display: block;
     font-size: 20px;
+    font-family: BGBold;
 }
     
 
 .project-page {
     font-size:  20px;
-    font-family: BGLight;
+    font-family: BGBold;
     text-transform:  uppercase;
     letter-spacing: 2px;
     margin-bottom: 80px;
@@ -1349,53 +1392,93 @@ input:focus, textarea:focus {
 
 .project-git {
     margin-top: 10px;
+    font-family: BGBold;
 }
 
 
 .project-git-name {
     padding-left: 20px; 
-    font-family:  BGBold;
+    font-family: BGBold;
     font-size: 30px;
     color :#e7ff7b;
 }
 
-.Hello {
-    color:rgba(192, 203, 255, 0.999);
-    font-family: Chelsea;
-    font-size: 20px;
-    margin-top: 70px; 
-    padding-left: 20px;
+
+.back1 .button3 {
+    padding: 10px 20px;
+    background-color:rgba(150, 168, 255, 0.999);
+    color: white; /* White text */
     text-align: center;
-    letter-spacing: 1.5px; 
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-bottom: 0;
+    font-family: zenKaku;
+   
+}
+
+.back1 .button3:hover {
+    background-color:rgba(64, 74, 125, 0.999)
+}
+
+
+
+
+
+
+/*FUN PAGE */
+
+.project-card:nth-child(4n)::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.project-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* This sets the gap between the cards */
+    margin: 0 auto; /* Keeps the wrapper centered */
+    max-width: 1200px; /* Adjust as needed */
 }
 
 .project-card {
     border: 1px solid #ccc;
-    padding: 16px;
-    margin: 16px;
-    width: 30%;
-    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px; /* Adjust or remove as necessary */
+    flex:  0 1 calc(30% - 20px); /* Adjust the percentage for 3 in a row and subtract twice the gap */
     font-family: futuraLight;
-   
     border-radius: 20px;
-    margin-left: 30px;
-   
-    backdrop-filter: blur(20px);
-    border-radius: .7rem;
+    backdrop-filter: blur(50px);
     box-shadow: 0px 0px 20px 1px #ffbb763f;
     transition: all 0.2s;
     position: relative;
     cursor: pointer;
-    z-index : 10; 
+    z-index: 6;
+    margin-bottom: 30px; /* Adjust or remove as necessary */
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove any default inline spacing */
+    border-radius: 8px; /* Match your desired styling */
 }
   
   .card-inner {
     width: inherit;
     height: inherit;
-    background: rgba(255,255,255,.05);
+   
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(10px);
+   
     border-radius: 8px;
     z-index: 0; 
   }
@@ -1403,33 +1486,11 @@ input:focus, textarea:focus {
   .project-card:hover {
     transform: scale(1.04) rotate(1deg);
   }
-  
-  .circle {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(#e63369, #ff6589);
-    border-radius: 50%;
-    position: absolute;
-    animation: move-up6 2s ease-in infinite alternate-reverse;
-    z-index : -1;
-  }
+
 
   .project-wrapper {
     position: relative;
 }
-  
-  .circle:nth-child(1) {
-    top: 24x;
-    left: -25px; 
-    z-index : -1;
-  }
-  
-  .circle:nth-child(2) {
-    bottom: -430px;
-    left: 400px;
-    animation-name: move-down1;
-    z-index : -1;
-  }
   
   @keyframes move-up6 {
     to {
@@ -1443,37 +1504,80 @@ input:focus, textarea:focus {
     }
   }
   
-.project-card img {
-    max-width: 100%;
-    height: auto;
 
-}
-  
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.project-description {
+.project-description-1 {
    margin-top: 8px;
-   font-family: futuraLight;
-   color:#d00341;
+   font-family: zenKaku, sans-serif;
+   color:#ff9898;
    font-size : 20px;
 }
+
+.project-description-2 {
+    margin-top: 8px;
+    font-family: zenKaku, sans-serif;
+    color:#e19bff;
+    font-size : 20px;
+ }
+
+ .project-description-3 {
+    margin-top: 8px;
+    font-family: zenKaku, sans-serif;
+    color:#71ecff;
+    font-size : 20px;
+ }
+
+ .project-description-4 {
+    margin-top: 8px;
+    font-family: zenKaku, sans-serif;
+    color:#f2ff8e;
+    font-size : 20px;
+ }
+
+ .project-description-5 {
+    margin-top: 8px;
+    font-family: zenKaku, sans-serif;
+    color:#8effa1;
+    font-size : 20px;
+ }
+
+ .project-description-6 {
+    margin-top: 8px;
+    font-family: zenKaku, sans-serif;
+    color:rgb(255, 167, 218); 
+    font-size : 20px;
+ }
 .project-link {
     text-decoration: none;
     margin-top: 16px;
-    font-family: futuraLight;
+    font-family: zenKaku, sans-serif;
     font-size: 18px;
-    color: magenta ;
+    color: rgba(101, 255, 96, 0.9);
 
 
 }
 
-.project-tech {
-    color: #92002c;
+.title-fun, .subtitle-fun {
+    background: rgba(255, 81, 81, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    padding: 5px 20px; 
+    color:rgba(198, 255, 189, 0.9);
+    font-family: zenKaku, sans-serif;
+    display: block; 
+    /*width: max-content;  */
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 30px;
+    margin-top: 30px;
 }
+
+.fun-container {
+    margin-top: 150px;
+}
+
+
+
 
 
 

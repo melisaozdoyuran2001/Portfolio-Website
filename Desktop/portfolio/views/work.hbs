@@ -5,10 +5,10 @@
         <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
         <link rel="stylesheet" href="your-stylesheet.css">
     </head>
-    <body>
+    <body id="workpage">
         {{> main}}
         <div class="my-work">
-            <div class="recent-title">my projects</div>
+           
             <div class="project-container">
                 {{#each projects}}
                 <div class="work-obj-container" id="{{id}}" onclick="window.location='/project/{{id}}'">
@@ -28,5 +28,13 @@
             </div>
         </div>
         {{> footer}}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var selectedBackground = localStorage.getItem('selectedBackground');
+            if (selectedBackground) {
+                document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+            }
+        });
+        </script>
     </body>
 </html>

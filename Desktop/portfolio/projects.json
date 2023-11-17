@@ -2,7 +2,7 @@
 {
     "id" : "1",
     "title": "Flow Free",
-    "category": "Game Application",
+    "category": "Mobile Game Development",
     "description": "FlowFree is a logic puzzle game that boasts a unique dynamic level generation algorithm, ensuring every puzzle is a fresh challenge. Its user-friendly interface, combined with vivid graphics and varied difficulty levels, makes it an engaging experience for both beginners and seasoned puzzle enthusiasts. Key features include a never-repeating, always-solvable puzzle design, player-centric UI, and immersive gameplay.",
     "sitename": "-->Github Repo",
     "deliverables": ["project website"],
@@ -11,30 +11,13 @@
     "img1": "/photos/flow1.jpg",
     "img2": "/photos/flow2.jpg",
     "img3": "/photos/flow3.jpg",
+    "recording": "",
     "partial": "poker",
     "url": "https://github.com/melisaozdoyuran2001/Cerebral-Puzzles"
 },
-
 "2":
 {
     "id" : "2",
-    "title": "Pull The Pin",
-    "category": "Game Application",
-    "description": "Pull The Pin is a strategic puzzle game where each level poses a distinct challenge, designed using prefabs. With a unique progression-tailored level generator, the game adjusts to match players' advancing skills. Key features highlight its strategic gameplay, adaptive levels that grow with the player, and optimized mechanics for a seamless and challenging experience.",
-    "sitename": "-->Github Repo",
-    "deliverables": ["project website"],
-    "tools": ["C#", "Unity", "Adobe XD"],
-    "coverphoto": "/photos/pin.jpeg",
-    "img1": "/photos/pin1.jpg",
-    "img2": "/photos/pin2.jpg",
-    "img3": "/photos/pin3.jpg",
-    "partial": "poker",
-    "url": "https://github.com/melisaozdoyuran2001/Cerebral-Puzzles"
-},
-    
-"3":
-{
-    "id" : "3",
     "title": "SimpleSQL",
     "category": "Systems Programming",
     "description":"SimpleSQL is a four-phase project designed to simplify SQL query execution. The project kicks off with a lexical scanner for tokenizing SQL queries, followed by integrated parsing and analyzing modules for syntax and semantic checks. It then executes the validated queries and culminates with a robust suite of unit tests. Developed entirely in C, SimpleSQL offers a comprehensive look into SQL query handling.",
@@ -45,8 +28,29 @@
     "img1": "/photos/sql1.jpg",
     "img2": "/photos/sql3.jpg",
     "img3": "/photos/sql2.jpg",
+    "recording": "",
     "partial": "compiler"
 }, 
+
+"3":
+{
+    "id" : "3",
+    "title": "Pull The Pin",
+    "category": "Mobile Game Development",
+    "description": "Pull The Pin is a strategic puzzle game where each level poses a distinct challenge, designed using prefabs. With a unique progression-tailored level generator, the game adjusts to match players' advancing skills. Key features highlight its strategic gameplay, adaptive levels that grow with the player, and optimized mechanics for a seamless and challenging experience.",
+    "sitename": "-->Github Repo",
+    "deliverables": ["project website"],
+    "tools": ["C#", "Unity", "Adobe XD"],
+    "coverphoto": "/photos/pin.jpeg",
+    "img1": "/photos/pin1.jpg",
+    "img2": "/photos/pin2.jpg",
+    "img3": "/photos/pin3.jpg",
+    "recording": "",
+    "partial": "poker",
+    "url": "https://github.com/melisaozdoyuran2001/Cerebral-Puzzles"
+},
+    
+
 "4":
 {
     "id" : "4",
@@ -60,8 +64,10 @@
     "img1": "",
     "img2": "",
     "img3": "",
+    "recording": "",
     "partial": "planner"
 }, 
+
 
 "5": 
 {
@@ -76,6 +82,7 @@
     "img1": "/photos/poker1.jpg",
     "img2": "/photos/poker2.jpg",
     "img3": "/photos/poker3.jpg",
+    "recording": "",
     "partial": "poker"
 },
 
@@ -88,10 +95,11 @@
     "sitename": "",
     "deliverables": ["project website"],
     "tools": ["Rhino"],
-    "coverphoto": "/photos/nfc3.jpg",
+    "coverphoto": "/photos/nfc-cover.jpg",
     "img1": "/photos/nfc1.jpg",
     "img2": "/photos/nfc2.jpg",
     "img3": "/photos/nfc3.jpg",
+    "recording": "",
     "partial": "lock"
 },
 
@@ -104,10 +112,11 @@
     "sitename": "",
     "deliverables": ["project website"],
     "tools": ["SolidWorks" , "Excel", "Google Forms"],
-    "coverphoto": "/photos/cover3.jpeg",
+    "coverphoto": "/photos/pegBoard.png",
     "img1": "/photos/peg1.jpg",
     "img2": "/photos/cover3.jpeg",
     "img3": "/photos/peg2.jpg",
+    "recording": "",
     "partial": "pegbaord"
 }
 }

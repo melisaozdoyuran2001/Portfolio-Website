@@ -5,9 +5,9 @@
 
     </head>
     {{> main }}
-    <body>
+    <body id="homepage">
         <div class="home">
-            <div class="switch-container">
+            {{!-- <div class="switch-container">
             <label class="switch" data-tooltip="Toggle this switch to enable or disable the cosmic visualization features :)">
                 <div class="round">
                     <input name="onoff" id="onoff" type="checkbox">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </label>
-            </div>
+            </div> --}}
 
              <div class="planet planet-1"></div>
             <div class="planet planet-2"></div>
@@ -30,20 +30,23 @@
             <div class="star star-3"></div>
             <div class="decor"></div>
             <div class="home-case">
-                <div class="home-box">
                     <div class="typewriter-container">
                         <div class="typewriter-1">
-                            <h1>MELISA ÖZDOYURAN</h1>
+                            <h1> MELISA OZDOYURAN</h1>
                         </div>
-                    </div>
+                        <div class="typewriter-2">
+                            <p>Solutions-Driven<span class="highlight-software-engineer"> Software Engineer</span></p>
+                        </div>
+                        <div class="typewriter-3">
+                            <p>Enhancing <span class="highlight-user-experience">User Experiences</span> Through <span class="underline-technology">Technology</span></p>  
+                        </div>
                 </div> 
-                <div class="button-container"> 
-                    <a class="home-button" href="/about"><span>about me</span></a>
-                    <a class="home-button" href="/work"><span>my work</span></a>
-                    <a class="home-button" href="/contact"><span>let's chat</span></a>
-                     <a class="home-button" href="/fun"><span>time for fun? </span></a>
-                </div>
+            </div>
 
+           <div class="transition-container">
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+                <div class="circle circle3"></div>
             </div>
             
             <div class="logos">
@@ -65,7 +68,7 @@
             </div>
         </div>
         
-        {{> footer}}
+
 
         <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -91,7 +94,46 @@
   });
 });
 
+ document.addEventListener('DOMContentLoaded', function() {
+    var circle1 = document.querySelector('.circle1');
+    var circle2 = document.querySelector('.circle2');
+    var circle3 = document.querySelector('.circle3');
 
+    circle1.addEventListener('click', function() {
+        localStorage.setItem('selectedBackground', 'photos/aldebaran-s-qtRF_RxCAo0-unsplash.jpg');
+         circle2.style.opacity = '0.4';
+        circle3.style.opacity = '0.4';
+        circle1.style.opacity = '1';
+        applyBackground();
+    });
+
+    circle2.addEventListener('click', function() {
+        localStorage.setItem('selectedBackground', 'photos/bg2.jpg');
+         circle1.style.opacity = '0.5';
+        circle3.style.opacity = '0.5';
+        circle2.style.opacity = '1';
+        applyBackground();
+    });
+
+    circle3.addEventListener('click', function() {
+        localStorage.setItem('selectedBackground', 'photos/bg1.jpg');
+         circle1.style.opacity = '0.5';
+        circle2.style.opacity = '0.5';
+        circle3.style.opacity = '1';
+        applyBackground();
+    });
+
+    function applyBackground() {
+        var selectedBackground = localStorage.getItem('selectedBackground');
+        if (selectedBackground) {
+            document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+        }
+    }
+
+   circle1.click();
+    // Apply background when page loads
+    applyBackground();
+});
 
     </script>
     </body>

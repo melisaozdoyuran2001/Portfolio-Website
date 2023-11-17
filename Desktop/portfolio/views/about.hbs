@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
     </head>
-    <body>
+    <body id = "aboutme">
         {{> main}}
         <div class="about-glass-container"> <!-- New container for glass effect -->
             <div class="about-info">
@@ -30,5 +30,13 @@
             </div>
         </div> <!-- End of new container -->
         {{> footer}}
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var selectedBackground = localStorage.getItem('selectedBackground');
+        if (selectedBackground) {
+            document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+        }
+    });
+    </script>
     </body>
 </html>

@@ -6,11 +6,15 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
     </head>
-    <body>
+    <body id="letschat">
         {{> main}}
+      
         <div class="contact-glass-container">
+             <div class="contact-title">
+                <h3>Send Me A Message!</h3>
+            </div>
+             
             <div class="contact-container">
-                <div class="contact-title">let's chat</div>
                 <form class="contact-form" id="contact-form" action="/contact" method="POST">
                    <div class="contact-label">Your Name (required)</div>
                     <input type="text" id="fullname" name="fullname" >
@@ -39,4 +43,12 @@
         contactForm.style.display = "none";
         contactThanks.style.display = "block"; 
     }
+   
+    document.addEventListener('DOMContentLoaded', function() {
+    var selectedBackground = localStorage.getItem('selectedBackground');
+    if (selectedBackground) {
+        document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+    }
+    });
+
 </script>

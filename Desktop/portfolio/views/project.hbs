@@ -9,9 +9,14 @@
 
 </head>
 
-<body>
+<body id="projpage">
     <!-- Main Content -->
     {{> main }}
+
+  <div class="back1">
+    <a href="/work" class="button3">Back</a>
+</div>
+
 
     <!-- Project Title and Category -->
    <section class="project-title-section">
@@ -27,6 +32,12 @@
             <img src="{{project.img1}}" >
             <img src="{{project.img2}}">
             <img src="{{project.img3}}" >
+            {{#if project.recording}}
+            <video width="6400" height="480" controls>
+                <source src="{{project.recording}}" type="video/mp4">
+                Your browser does not support the video tag.
+             </video>
+        {{/if}}
 </section>
 
     <!-- Project Description and Details -->
@@ -50,6 +61,8 @@
 
     <!-- Footer -->
     {{> footer }}
+
+    
 </body>
 
 </html>
