@@ -2,24 +2,14 @@
 <html lang ="en">
     <head>
        <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whmKvpSTqF0U7Gjng229QuC5DkZa9zFDp5uTYU/3pFt5uNeckvbuz1z8Jv" crossorigin="anonymous">
+
+
 
     </head>
     {{> main }}
     <body id="homepage">
         <div class="home">
-            {{!-- <div class="switch-container">
-            <label class="switch" data-tooltip="Toggle this switch to enable or disable the cosmic visualization features :)">
-                <div class="round">
-                    <input name="onoff" id="onoff" type="checkbox">
-                    <div class="back">
-                        <label for="onoff" class="but">
-                            <span class="on">0</span>
-                            <span class="off">I</span>
-                        </label>
-                    </div>
-                </div>
-            </label>
-            </div> --}}
 
              <div class="planet planet-1"></div>
             <div class="planet planet-2"></div>
@@ -29,6 +19,7 @@
             <div class="star star-2"></div>
             <div class="star star-3"></div>
             <div class="decor"></div>
+
             <div class="home-case">
                     <div class="typewriter-container">
                         <div class="typewriter-1">
@@ -47,6 +38,19 @@
                 <div class="circle circle1"></div>
                 <div class="circle circle2"></div>
                 <div class="circle circle3"></div>
+            </div>
+
+            <div class="star-feature">
+                <i id="star-button"  class="fas fa-star"></i>
+                <div class="star-feature-desc">
+                    Click to Enable/Disables Cosmic Visualization Features
+                     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                        <lord-icon
+                            src="https://cdn.lordicon.com/wibvszhx.json"
+                            trigger="hover"
+                            style="width:20px;height:20px;padding-top: 5px;">
+                        </lord-icon>
+                </div>
             </div>
             
             <div class="logos">
@@ -71,69 +75,64 @@
 
 
         <script>
-      document.addEventListener('DOMContentLoaded', function() {
-  const onoffSwitch = document.getElementById('onoff');
-  const homeElement = document.querySelector('.home');
-  const bodyElement = document.querySelector('body');
-  const titleElement = document.querySelector('.typewriter-1 h1');
-  const buttonContainer = document.querySelector('.button-container');
-
-  onoffSwitch.addEventListener('change', function() {
-    console.log("Switch toggled!");  // Debugging line
-    if (this.checked) {
-      homeElement.classList.add('show-planets', 'show-stars');
-      bodyElement.classList.add('saturn-cursor');
-      titleElement.classList.add('change-font');
-      buttonContainer.classList.add('change-button-font');
-    } else {
-      homeElement.classList.remove('show-planets', 'show-stars');
-      bodyElement.classList.remove('saturn-cursor');
-      titleElement.classList.remove('change-font');
-       buttonContainer.classList.remove('change-button-font');
-    }
-  });
-});
-
- document.addEventListener('DOMContentLoaded', function() {
-    var circle1 = document.querySelector('.circle1');
-    var circle2 = document.querySelector('.circle2');
-    var circle3 = document.querySelector('.circle3');
-
-    circle1.addEventListener('click', function() {
-        localStorage.setItem('selectedBackground', 'photos/aldebaran-s-qtRF_RxCAo0-unsplash.jpg');
-         circle2.style.opacity = '0.4';
-        circle3.style.opacity = '0.4';
-        circle1.style.opacity = '1';
-        applyBackground();
+    document.getElementById('star-button').addEventListener('click', function() {
+    document.body.classList.toggle('show-planets');
+    document.body.classList.toggle('show-stars');
+    document.body.classList.toggle('saturn-cursor'); 
+    this.classList.toggle('toggle-on');
     });
 
-    circle2.addEventListener('click', function() {
-        localStorage.setItem('selectedBackground', 'photos/bg2.jpg');
-         circle1.style.opacity = '0.5';
-        circle3.style.opacity = '0.5';
-        circle2.style.opacity = '1';
-        applyBackground();
+
+    document.addEventListener('mousemove', function(e) {
+        var cursor = document.getElementById('cursor');
+        var x = e.clientX; 
+        var y = e.clientY;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
     });
 
-    circle3.addEventListener('click', function() {
-        localStorage.setItem('selectedBackground', 'photos/bg1.jpg');
-         circle1.style.opacity = '0.5';
-        circle2.style.opacity = '0.5';
-        circle3.style.opacity = '1';
-        applyBackground();
-    });
 
-    function applyBackground() {
-        var selectedBackground = localStorage.getItem('selectedBackground');
-        if (selectedBackground) {
-            document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var circle1 = document.querySelector('.circle1');
+        var circle2 = document.querySelector('.circle2');
+        var circle3 = document.querySelector('.circle3');
+
+        circle1.addEventListener('click', function() {
+            localStorage.setItem('selectedBackground', 'photos/aldebaran-s-qtRF_RxCAo0-unsplash.jpg');
+            circle2.style.opacity = '0.4';
+            circle3.style.opacity = '0.4';
+            circle1.style.opacity = '1';
+            applyBackground();
+        });
+
+        circle2.addEventListener('click', function() {
+            localStorage.setItem('selectedBackground', 'photos/bg2.jpg');
+            circle1.style.opacity = '0.5';
+            circle3.style.opacity = '0.5';
+            circle2.style.opacity = '1';
+            applyBackground();
+        });
+
+        circle3.addEventListener('click', function() {
+            localStorage.setItem('selectedBackground', 'photos/bg1.jpg');
+            circle1.style.opacity = '0.5';
+            circle2.style.opacity = '0.5';
+            circle3.style.opacity = '1';
+            applyBackground();
+        });
+
+        function applyBackground() {
+            var selectedBackground = localStorage.getItem('selectedBackground');
+            if (selectedBackground) {
+                document.body.style.backgroundImage = 'url(' + selectedBackground + ')';
+            }
         }
-    }
 
-   circle1.click();
-    // Apply background when page loads
-    applyBackground();
-});
+    circle1.click();
+        // Apply background when page loads
+        applyBackground();
+    });
 
     </script>
     </body>

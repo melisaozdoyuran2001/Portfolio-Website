@@ -77,9 +77,9 @@ body {
 #homepage {
     overflow-y: hidden;
 }
-/* For Saturn cursor */
+
 .saturn-cursor #cursor {
-    cursor: hidden;
+    cursor: hidden; 
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -115,7 +115,6 @@ body {
     height: 70px;
     z-index: 9;
     background-color:#fff3f900; 
-    
 }
 
 .blurred-navbar {
@@ -155,23 +154,46 @@ body {
 
 .home-button {
     display: inline-block; 
-    font-family:  zenakuR, sans-serif; /* Use the specified font */
-    color: #ffffff; /* Initial color of the text */
-    font-size: 27px; /* Initial font size */
-    transition: color 0.3s, font-size 0.3s; /* Smooth transition for color and font-size */
-    /* Add other necessary styling like padding, margin, etc. as per your design */
+    font-family:  zenakuR, sans-serif;
+    color: #ffffff; 
+    font-size: 27px; 
+    transition: color 0.3s, font-size 0.3s; 
     margin-top: 18px; 
     margin-left: 25px; 
     margin-right: 25px; 
-    z-index: 10; 
+    z-index: 10;
 }
 
 .home-button:hover {
-    color: yellow; /* Change color to yellow on hover */
-    font-size: 28px; /* Increase font size on hover */
+    color: yellow; 
+    font-size: 28px;
     font-family: zenKaku, sans-serif;
     margin-top: 18px; 
 
+}
+
+.extras-text {
+    position: absolute;
+    background-color: #ffffff19;
+    backdrop-filter: blur(100px);
+    padding: 10px;
+    padding-top : 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    bottom: -120px;
+    left: 50.5%;
+    transform: translateX(55%);
+    width: 300px; 
+    font-size: 20px;
+    font-family: zenkaku;
+    color: white;
+    display: none;
+    transition: 0.5s ease; 
+    z-index: 9;
+}
+
+.extras-text:hover {
+    color: yellow; 
 }
 
 .current-page {
@@ -180,6 +202,7 @@ body {
     font-family: zenKaku, sans-serif;
     margin-top: 18px; 
 }
+
 #bars{
     color: #ffffff;
     position: absolute;
@@ -264,6 +287,49 @@ body {
     letter-spacing: 1px;
 }
 
+.star-feature {
+    position: fixed;
+    top: 85px;
+    left: 24px;
+    z-index: 100; 
+    cursor: pointer; 
+    transition: 0.5s ease-in-out;
+}
+
+.star-feature-desc {
+    display: none;
+    color: rgb(249, 255, 197);
+    background-color: #00072D;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    font-family: zenakuR;
+    font-size: 18px;
+    width: 350px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    transition: 0.5s ease-in-out;
+    padding: 15px;
+}
+
+.star-feature:hover .star-feature-desc {
+    display:block;
+}
+
+#star-button {
+    font-size: 35px; 
+    color: #ffee8b85; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.star-feature:hover #star-button {
+    transform: scale(1.2); 
+    color: #fff835; 
+}
+
+#star-button.toggle-on {
+    color: #fff835; 
+}
+
 .planet {
     visibility: hidden;  
     opacity: 0;  
@@ -288,7 +354,7 @@ body {
 }
 
 .planet-2 {
-    background: radial-gradient(circle, #00F260, #0575E6);
+    background: radial-gradient(circle, hsl(127, 100%, 92%), #ad5cff);
   
     background-size: cover;
     bottom: 14%;
@@ -309,7 +375,7 @@ body {
 }
 
 .planet-4 {
-    background: radial-gradient(circle, #ebc9ff, #18ff8c);
+    background: radial-gradient(circle, #6198ff, #18ff8c);
     background-size: cover;
     top: 85%;
     left: -5%;
@@ -357,9 +423,9 @@ body {
 }
 
 .star-3 {
-    top: 70%;
+    top: 75%;
     left: 50%;
-    animation-delay: 2.5s, 2.5s;
+    animation-delay: 0.5s, 0.5s;
 }
 
 @keyframes slide-star {
@@ -674,6 +740,9 @@ a {
     font-family: zenakuR;
     font-size: 17px; 
     padding-top: 60px;
+    transition: all 0.5s ease;
+    animation: fadeIn 1.5s ease-out;
+    animation-fill-mode: forwards;
 }
 
 .contact-label { 
@@ -837,8 +906,8 @@ input:focus, textarea:focus {
     margin-right: 75px;
     display: inline-block;
     position: relative;
-    margin-bottom: 75px;
-    margin-top: 170px;
+    margin-bottom: 40px;
+    margin-top: 120px;
     width: 400px;  
     height: 270px; 
     border-radius: 15px;
@@ -882,53 +951,54 @@ input:focus, textarea:focus {
     z-index: 3;
 }
 
-.work-title {
-    text-align: left;
-    width: 400px;
-    height: 270px;
-    position:absolute;
-    line-height: 22.6;
-    bottom: -63px;
-    z-index: 4;
-    color: rgba(255, 252, 78, 0.999);
-    font-size: 21px;
-    letter-spacing: 1px;
-    text-transform: uppercase; 
-    overflow: hidden;
-    left: 50%;  
-    transform: translateX(-17.5%);
+.work-title, .work-cat {
+    position: absolute;
+    width: 100%; 
+    text-align: center; 
+    left: 0; 
+    transform: translateY(-50%);
     font-family: zenKaku;
+    overflow: hidden;
+    z-index: 4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.work-title::before {
-    content: "";
-    position: absolute;
-    bottom:0;
-    left: 0;
-    width: 60%;
-    height: 20%;
-    background: rgba(255, 255, 255, 0); 
-    backdrop-filter: blur(2px); 
-    z-index: -1; 
-
-
+.work-title {
+    bottom: -50px;
+    font-size: 21px;
+    color: rgba(255, 252, 78, 0.999);
 }
 
 .work-cat {
-   text-align: center; 
-    width: 400px;
-    height: 270px;
-    position:absolute;
-    line-height: 22.6;
-    bottom: -155px;
-    z-index: 4;
-    color: rgba(157, 255, 216, 0.999);
+    bottom: -70px; 
     font-size: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase; 
-    left: 50%;  
-    transform: translateX(-50%);
+    color: rgba(157, 255, 216, 0.999);
+}
+
+.see-more-section {
+    text-align: center;
+    margin-top: 100px;
+    
+}
+
+.see-more-link {
+    font-size: 30px;
     font-family: zenKaku;
+    border: 4px solid rgba(119, 255, 173, 0.797);
+    background-color: #8effa11a;
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(246, 255, 121);
+    transition : all 0.7s ease;
+    font-weight: 600;
+    
+}
+
+.see-more-link:hover {
+    background-color: rgba(238, 255, 164, 0.176);
+    color: rgba(119, 255, 173);
+    border: 4px solid rgba(244, 255, 119, 0.53);
    
 }
 
@@ -952,6 +1022,9 @@ input:focus, textarea:focus {
     margin: auto;
     color: hsl(60, 97%, 86%);
     font-family: zenakuR;
+    transition: all 0.5s ease;
+    animation: fadeIn 1.5s ease-out;
+    animation-fill-mode: forwards;
 }
 
 .about-header {
@@ -965,6 +1038,9 @@ input:focus, textarea:focus {
     transition : all 0.5 ease;
     z-index: 7;
     position: relative;
+    transition: all 0.5s ease;
+    animation: fadeIn 1.5s ease-out;
+    animation-fill-mode: forwards;
 
 }
 
@@ -982,8 +1058,8 @@ input:focus, textarea:focus {
     margin: auto;
     margin-top: 58px;
     margin-bottom: 100px;
-    border-radius: 15px; 
-    box-shadow: 0 0 7px rgba(0,0,0,0.5); 
+    border-radius: 350px; 
+    box-shadow: 0  0 20px rgb(255, 255, 255); 
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
@@ -1005,15 +1081,16 @@ input:focus, textarea:focus {
 .my-skills {
     font-family: alata;
     margin-top: 33px;
-    color: rgb(238, 255, 0);
+    color: rgb(247, 255, 130);
     font-family: zenKaku;
     text-transform: uppercase;
     margin-bottom: 10px;
     letter-spacing: 1px;
-    font-size: 22px;
+    font-size: 25px;
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
+    font-weight: 700;
     
 
 }
@@ -1046,9 +1123,8 @@ input:focus, textarea:focus {
 
 .about-next {
     height: 333px;
-    margin-top: 50px; 
-    background-color: #e2e2e261;
-    color: rgb(238, 255, 0);
+    margin-top: 33px;
+    color: rgb(252, 255, 207);
     font-family: zenKaku;
     text-align: center;
     margin-bottom: 0px;
@@ -1057,7 +1133,6 @@ input:focus, textarea:focus {
     animation: fadeIn 1.5s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
-  
 }
 
 .about-ready {
@@ -1303,6 +1378,9 @@ input:focus, textarea:focus {
     cursor: pointer;
     z-index: 6;
     margin-bottom: 30px; /* Adjust or remove as necessary */
+    transition: all 0.5s ease;
+    animation: fadeIn 1.5s ease-out;
+    animation-fill-mode: forwards;
 }
 
 .project-card img {

@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymus">
+       
+
         <title>Melisa Ozdoyuran</title>
         <link rel="icon" type="image/jpeg" href="photos/mypp.jpg">
     </head>
@@ -17,8 +19,28 @@
                     <a class="home-button" href="/about"><span>ABOUT</span></a>
                     <a class="home-button" href="/work"><span>PROJECTS</span></a>
                     <a class="home-button" href="/contact"><span>CONTACT</span></a>
-                    <a class="home-button" href="/fun"><span>EXTRAS</span></a>    
-            </div>
+                    <a class="home-button" href="/fun"><span>EXTRAS</span></a>
+            </div>    
+            <a class="extras-text"  href="/fun">
+                Generative Art <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/zdzignng.json"
+                        trigger="hover"
+                        style="width:30px;height:30px;padding-top: 20px;">
+                    </lord-icon> <br>
+                Game Design & Development <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/pbyiftgw.json"
+                        trigger="hover"
+                        style="width:30px;height:30px;">
+                    </lord-icon><br>
+                Engineering & Design <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/ikavhliv.json"
+                        trigger="hover"
+                        style="width:25px;height:25px;padding-top: 10px;">
+                    </lord-icon>
+            </a>
             <i id="bars" class="fas fa-bars" onclick="openMenu()"></i>
         </div>
         <div id="dark-overlay" onclick="closeMenu()"></div>
@@ -45,13 +67,7 @@
                 menuSlider.style.width= "0";
                 document.getElementById("dark-overlay").style.width = "0"; 
             }
-            document.addEventListener("mousemove", function(event) {
-                const cursor = document.getElementById("cursor");
-                const x = event.clientX -10;
-                const y = event.clientY + window.scrollY -10;
-                cursor.style.left = x + "px";
-                cursor.style.top = y + "px";
-            });
+
 
             document.addEventListener('DOMContentLoaded', function() {
             var buttons = document.querySelectorAll('.home-button');
@@ -59,18 +75,35 @@
                 if (window.location.pathname === button.getAttribute('href')) {
                     button.classList.add('current-page');
                 }
+                });
+             });
+
+            document.addEventListener('scroll', function() {
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) { 
+                navbar.classList.add('blurred-navbar');
+            } else {
+                navbar.classList.remove('blurred-navbar');
+            }
             });
-        });
 
-        document.addEventListener('scroll', function() {
-        var navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) { // Adjust the 100px to suit your needs
-            navbar.classList.add('blurred-navbar');
-        } else {
-            navbar.classList.remove('blurred-navbar');
-        }
-        });
 
+            const extrasButton = document.querySelector('.home-button[href="/fun"]');
+            const navBar = document.querySelector('.navbar');
+            const extrasText = document.querySelector('.extras-text');
+
+
+            extrasButton.addEventListener('mouseenter', function() {
+                extrasText.style.display = 'block';
+            });
+
+            extrasText.addEventListener('mouseleave', function() {
+                extrasText.style.display = 'none';
+            });
+
+            navBar.addEventListener('mouseleave', function() {
+             extrasText.style.display = 'none';
+            });
         </script>
     </body>
 </html>
